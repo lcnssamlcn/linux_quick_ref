@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Linux Quick Reference</string>
+    <string name="search_hint">$ Search Command</string>
+    <string-array name="cmds">
+        <item>alias</item>
+        <item>basename</item>
+        <item>cal</item>
+        <item>cat</item>
+        <item>cd</item>
+        <item>chmod</item>
+        <item>cp</item>
+        <item>cut</item>
+        <item>date</item>
+        <item>df</item>
+        <item>diff</item>
+        <item>dirname</item>
+        <item>du</item>
+        <item>echo</item>
+        <item>exit</item>
+        <item>export</item>
+        <item>fg</item>
+        <item>file</item>
+        <item>find</item>
+        <item>ftp</item>
+    </string-array>
+</resources>
