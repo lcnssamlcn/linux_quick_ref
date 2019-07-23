@@ -6,6 +6,32 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorLink">@color/manpage_a</item>
+    </style>
+
+    <style name="activity_manpage">
+        <item name="android:textColor">@color/text</item>
+    </style>
+
+    <style name="activity_manpage.cmd_name">
+        <item name="fontFamily">monospace</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="activity_manpage.h">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="activity_manpage.p">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@color/manpage_p</item>
+    </style>
+
+    <style name="activity_manpage.li">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/manpage_li</item>
     </style>
 
 </resources>

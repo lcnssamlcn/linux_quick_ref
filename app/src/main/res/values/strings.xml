@@ -18,9 +18,13 @@
         <item>echo</item>
         <item>exit</item>
         <item>export</item>
-        <item>fg</item>
         <item>file</item>
         <item>find</item>
         <item>ftp</item>
     </string-array>
+    <string name="manpage_cmd_examples_label">Examples</string>
+    <string name="manpage_cmd_tips_label">Tips</string>
+    <string name="manpage_related_commands_label">See</string>
+    <string name="err_dlg_ok">OK</string>
+    <string name="err_manual_missing">Error Code 1: Manual is missing. Please reinstall the app.</string>
 </resources>

@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
-    android:background="@color/list_item_bg"
+    android:padding="@dimen/padding_default"
+    android:background="@color/command_list_item_bg"
     android:text=""
     android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
-    android:textColor="@color/list_item_fg"
+    android:textColor="@color/command_list_item_fg"
     app:fontFamily="monospace" />

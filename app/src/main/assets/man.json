@@ -1,0 +1,29 @@
+{
+    "commands": [
+        {
+            "name": "alias",
+            "summary": "Create an alias for an existing command.",
+            "examples": [
+                {
+                    "code": "alias -p",
+                    "description": "Print all existing alias defined in your shell"
+                },
+                {
+                    "code": "alias ll=\"ls -l\"",
+                    "description": "Create an alias for command `ls -l` so that you just need to type `ll` next time to achieve the same goal. It is no need to enter the full command anymore."
+                },
+                {
+                    "code": "alias rm=\"rm -i\"",
+                    "description": "Reassign the `rm` command to prevent accidental deletion of files."
+                }
+            ],
+            "tips": [
+                "You can store all your aliases to ~/.bashrc so that they can be used permanently."
+            ],
+            "relatedCommands": [
+                "unalias",
+                "export"
+            ]
+        }
+    ]
+}

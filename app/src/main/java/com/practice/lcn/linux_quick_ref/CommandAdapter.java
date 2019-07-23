@@ -1,6 +1,9 @@
 package com.practice.lcn.linux_quick_ref;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,24 +13,27 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CustomViewHolder> implements Filterable {
-    /* read-only dataset */
-    private final List<String> dataset;
-    /* filtered dataset */
-    private List<String> filteredDataset;
+public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CommandViewHolder> implements Filterable {
+    private Context context;
+    /* read-only commands */
+    private final List<String> commands;
+    /* filtered commands */
+    private List<String> filteredCommands;
 
-    public CommandAdapter(final List<String> dataset) {
-        this.dataset = dataset;
-        this.filteredDataset = dataset;
+    public CommandAdapter(Context context, final List<String> commands) {
+        this.context = context;
+        this.commands = commands;
+        this.filteredCommands = commands;
     }
 
-    public static class CustomViewHolder extends RecyclerView.ViewHolder {
+    public static class CommandViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
 
-        public CustomViewHolder(View itemView) {
+        public CommandViewHolder(View itemView) {
             super(itemView);
             this.title = (TextView) itemView;
         }
@@ -35,24 +41,45 @@ public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CustomVi
 
     @NonNull
     @Override
-    public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+    public CommandViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.command_list_item, parent, false);
         Log.i(MainActivity.TAG, "create");
-        return new CustomViewHolder(v);
+        return new CommandViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder cvh, int pos) {
+    public void onBindViewHolder(@NonNull CommandViewHolder cvh, int pos) {
         cvh.setIsRecyclable(false);
         if (pos % 2 == 1)
             cvh.title.setBackgroundColor(0xFF484848);
-        cvh.title.setText(filteredDataset.get(pos));
-        Log.i(MainActivity.TAG, String.format("%d, %d, %d, %d: \"%s\"", pos, cvh.getAdapterPosition(), cvh.getLayoutPosition(), filteredDataset.size(), cvh.title.getText().toString()));
+        cvh.title.setText(filteredCommands.get(pos));
+        cvh.title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView title = (TextView) v;
+                try {
+                    ((App) context.getApplicationContext()).loadManpages();
+                }
+                catch (IOException e) {
+                    AlertDialog dlg = new AlertDialog.Builder(context)
+                        .setMessage(R.string.err_manual_missing)
+                        .setPositiveButton(R.string.err_dlg_ok, null)
+                        .create();
+                    dlg.show();
+                    Log.getStackTraceString(e);
+                    return;
+                }
+                Intent intent = new Intent(context, ManpageActivity.class);
+                intent.putExtra(MainActivity.EXTRA_CMD_NAME, title.getText());
+                context.startActivity(intent);
+            }
+        });
+        Log.i(MainActivity.TAG, String.format("%d, %d, %d, %d: \"%s\"", pos, cvh.getAdapterPosition(), cvh.getLayoutPosition(), filteredCommands.size(), cvh.title.getText().toString()));
     }
 
     @Override
     public int getItemCount() {
-        return filteredDataset.size();
+        return filteredCommands.size();
     }
 
     @Override
@@ -65,13 +92,13 @@ public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CustomVi
                 constraintStr = constraintStr.trim().toLowerCase();
                 List<String> result = null;
                 if (constraintStr.isEmpty()) {
-                    result = new ArrayList<>(dataset);
+                    result = new ArrayList<>(commands);
                 }
                 else {
                     result = new ArrayList<>();
-                    for (String fruit : dataset) {
-                        if (fruit.toLowerCase().contains(constraintStr))
-                            result.add(fruit);
+                    for (String command : commands) {
+                        if (command.toLowerCase().contains(constraintStr))
+                            result.add(command);
                     }
                 }
                 FilterResults fr = new FilterResults();
@@ -82,7 +109,7 @@ public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CustomVi
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults fr) {
-                filteredDataset = (ArrayList<String>) fr.values;
+                filteredCommands = (ArrayList<String>) fr.values;
                 notifyDataSetChanged();
             }
         };

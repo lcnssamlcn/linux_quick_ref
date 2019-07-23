@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_default">10dp</dimen>
+    <dimen name="spacing_h_p">10dp</dimen>
+    <dimen name="spacing_p_p">10dp</dimen>
+    <dimen name="spacing_p_h">20dp</dimen>
+</resources>
