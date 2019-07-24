@@ -50,15 +50,193 @@
                     "description": "Extract multiple filenames without extension."
                 },
                 {
-                    "code": "$ basename ~\nuser",
+                    "code": "basename ~",
                     "description": "Get the user's home directory name."
+                }
+            ],
+            "tips": [
+                "This command is useful in shell script."
+            ],
+            "relatedCommands": [
+                "dirname"
+            ]
+        },
+        {
+            "name": "cal",
+            "summary": "CALendar - Display calendar in command line.",
+            "examples": [
+                {
+                    "code": "cal",
+                    "description": "Show calendar in current month this year."
+                },
+                {
+                    "code": "cal 10 2019",
+                    "description": "Show calendar in October, 2019."
+                },
+                {
+                    "code": "cal 2020",
+                    "description": "Show all months in 2020."
+                },
+                {
+                    "code": "cal -m 10",
+                    "description": "Show calendar in October this year."
+                },
+                {
+                    "code": "cal -m 3 -3",
+                    "description": "Show calendar surrounding March this year, aka showing Feb, Mar and April this year."
+                },
+                {
+                    "code": "cal 12 2022 -3",
+                    "description": "Show calendar surrounding December, 2022, aka showing Nov 2022, Dec 2022 and Jan 2023."
                 }
             ],
             "tips": [
 
             ],
             "relatedCommands": [
-                "dirname"
+                "date"
+            ]
+        },
+        {
+            "name": "cat",
+            "summary": "Print the contents of file(s) to the terminal.",
+            "examples": [
+                {
+                    "code": "cat /path/to/document.txt",
+                    "description": "Print the contents in file /path/to/document.txt."
+                },
+                {
+                    "code": "cat doc1.txt doc2.txt doc3.txt",
+                    "description": "Print the contents in all files doc1.txt, doc2.txt and doc3.txt."
+                },
+                {
+                    "code": "cat doc1.txt doc2.txt > doc12_combined.txt",
+                    "description": "Concatenate the contents in doc1.txt and doc2.txt and save it as doc12_combined.txt."
+                },
+                {
+                    "code": "cat -n doc1.txt",
+                    "description": "Print the contents in file doc1.txt with line number."
+                },
+                {
+                    "code": "cat doc1.txt | grep -n keyword",
+                    "description": "Search \"keyword\" in file doc1.txt (exact case search). Matched results will be outputed to the terminal in format\n<line number>:<line with \"keyword\">."
+                },
+                {
+                    "code": "cat doc1.txt | grep -n -i keyword",
+                    "description": "Search \"keyword\" in file doc1.txt (ignore case search). Matched results will be outputed to the terminal in format\n<line number>:<line with \"keyword\">."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "echo", "grep"
+            ]
+        },
+        {
+            "name": "cd",
+            "summary": "Change Directory - Navigate the current working directory in terminal to somewhere else.",
+            "examples": [
+                {
+                    "code": "cd",
+                    "description": "Navigate to home directory."
+                },
+                {
+                    "code": "cd /dir1/dir2",
+                    "description": "Navigate to directory /dir1/dir2."
+                },
+                {
+                    "code": "cd ..",
+                    "description": "Navigate to parent directory of the current working directory."
+                },
+                {
+                    "code": "cd ../..",
+                    "description": "Navigate to grandparent directory of the current working directory."
+                },
+                {
+                    "code": "cd ../dir1",
+                    "description": "Navigate to the parent directory and then move to dir1."
+                },
+                {
+                    "code": "cd -",
+                    "description": "Navigate to the previous working directory."
+                }
+            ],
+            "tips": [
+                "This is one of the most commonly-used command in daily life so keep it in mind."
+            ],
+            "relatedCommands": [
+                "pwd"
+            ]
+        },
+        {
+            "name": "chmod",
+            "summary": "CHange MODe - change the permission of the file/directory.",
+            "examples": [
+                {
+                    "code": "chmod u+r doc1.txt",
+                    "description": "Add the Read permission for the User who owned this file doc1.txt."
+                },
+                {
+                    "code": "chmod u+w doc1.txt",
+                    "description": "Add the Write permission for the User who owned this file doc1.txt."
+                },
+                {
+                    "code": "chmod u+x a.out",
+                    "description": "Add the eXecute permission for the User who owned this file a.out."
+                },
+                {
+                    "code": "chmod u+rx a.out",
+                    "description": "Add the Read and eXecute permission for the User who owned this file a.out."
+                },
+                {
+                    "code": "chmod u-r a.out",
+                    "description": "Remove the Read permission for the User who owned this file a.out."
+                },
+                {
+                    "code": "chmod u-rwx a.out",
+                    "description": "Remove the Read, Write and eXecute permission for the User who owned this file a.out."
+                },
+                {
+                    "code": "chmod g+r doc.txt",
+                    "description": "Add the Read permission for the file owner's Group."
+                },
+                {
+                    "code": "chmod o+r doc.txt",
+                    "description": "Add the Read permission for Outsiders, aka the public. It means everybody who doesn't belong to file owner's group can read the file."
+                },
+                {
+                    "code": "chmod ug+x a.out",
+                    "description": "Add the eXecute permission for the User who owned this file and the user's Group."
+                },
+                {
+                    "code": "chmod ugo+rwx a.out",
+                    "description": "Add the Read, Write and eXecute permission to everyone."
+                },
+                {
+                    "code": "chmod go-w doc1.txt",
+                    "description": "Remove the Write permission for the file owner's Group and Outsiders."
+                },
+                {
+                    "code": "chmod u+x *.sh",
+                    "description": "Add the eXecute permission for all files with the suffix .sh to the User who owned this file."
+                },
+                {
+                    "code": "chmod 644 doc1.txt",
+                    "description": "Set the permission of the file to \"rw-r--r--\". Note that it uses octal numeric system to represent permission. \"644\" is an octal number. Deciphering it into binary we get \"110 100 100\". 1 means to turn the permission on and 0 is off. For the first field \"110\", the leftmost 1 means to toggle the read permission on; the middle 1 means to toggle the write permission on; the last 0 means to turn off the execute permission. This process is similar for \"100\" and \"100\". Therefore, we get \"rw-r--r--\" at last."
+                },
+                {
+                    "code": "chmod 040 doc1.txt",
+                    "description": "Set the permission of the file to \"--- r-- ---\". That means only the file owner's group except the file owner can see the content of the file."
+                }
+            ],
+            "tips": [
+                "For your information, permission of any file/directory can be viewed via `ls -l`.",
+                "<font color='#FB6967'>u</font>: user, owner of the file/directory.<br /><font color='#FB6967'>g</font>: file/directory owner's group.<br /><font color='#FB6967'>o</font>: outsiders/public who don't belong to the owner's group.",
+                "<font color='#FB6967'>r</font>: read permission which determines whether the person can view the file.<br /><font color='#FB6967'>w</font>: write permission which determines whether the person can write the file.<br /><font color='#FB6967'>x</font>: execute permission which determines whether this file can be treated as an executable and run."
+            ],
+            "relatedCommands": [
+                "chown", "ls"
             ]
         }
     ]

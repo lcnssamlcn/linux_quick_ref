@@ -50,7 +50,7 @@
         style="@style/activity_manpage.h" />
     <TextView
         android:id="@+id/manpage_cmd_tips"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_h_p"
         android:text=""

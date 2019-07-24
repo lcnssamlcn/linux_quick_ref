@@ -9,13 +9,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.BulletSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.TypefaceSpan;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ManpageActivity extends AppCompatActivity {
     TextView cmdName;
@@ -23,6 +29,8 @@ public class ManpageActivity extends AppCompatActivity {
     RecyclerView examples;
     TextView tips;
     TextView relatedCommands;
+
+    static final int INLINE_CMD_COLOR = 0xFFE6ACF2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,8 +62,9 @@ public class ManpageActivity extends AppCompatActivity {
         CharSequence tipsSpanStr = new SpannableString("");
         List<String> tipsList = command.getTips();
         for (int i = 0; i < tipsList.size(); i++) {
-            SpannableString tipSpanStr = new SpannableString(tipsList.get(i));
+            SpannableString tipSpanStr = new SpannableString(Html.fromHtml(tipsList.get(i)));
             tipSpanStr.setSpan(new BulletSpan(10, 0xFFEFEFEF), 0, tipSpanStr.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            ManpageActivity.applyStyleOnCommands(tipSpanStr);
             tipsSpanStr = TextUtils.concat(tipsSpanStr, tipSpanStr);
             if (i != tipsList.size() - 1)
                 tipsSpanStr = TextUtils.concat(tipsSpanStr, "\n");
@@ -74,5 +83,14 @@ public class ManpageActivity extends AppCompatActivity {
                 relatedCommandsSpanStr = TextUtils.concat(relatedCommandsSpanStr, ", ");
         }
         relatedCommands.setText(relatedCommandsSpanStr);
+    }
+
+    static void applyStyleOnCommands(Spannable spanStr) {
+        Pattern pattern = Pattern.compile("`.+?`");
+        Matcher matcher = pattern.matcher(spanStr);
+        while (matcher.find()) {
+            spanStr.setSpan(new TypefaceSpan("monospace"), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            spanStr.setSpan(new ForegroundColorSpan(ManpageActivity.INLINE_CMD_COLOR), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        }
     }
 }

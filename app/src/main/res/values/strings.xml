@@ -8,6 +8,7 @@
         <item>cat</item>
         <item>cd</item>
         <item>chmod</item>
+        <item>chown</item>
         <item>cp</item>
         <item>cut</item>
         <item>date</item>
@@ -21,6 +22,10 @@
         <item>file</item>
         <item>find</item>
         <item>ftp</item>
+        <item>rlogin</item>
+        <item>scp</item>
+        <item>ssh</item>
+        <item>uname</item>
     </string-array>
     <string name="manpage_cmd_examples_label">Examples</string>
     <string name="manpage_cmd_tips_label">Tips</string>
