@@ -24,6 +24,42 @@
                 "unalias",
                 "export"
             ]
+        },
+        {
+            "name": "basename",
+            "summary": "Extract filename from a path.",
+            "examples": [
+                {
+                    "code": "$ basename /home/user/document.txt\ndocument.txt",
+                    "description": "Extract filename from an absolute path."
+                },
+                {
+                    "code": "$ basename ../../dir1/document1.txt\ndocument.txt",
+                    "description": "Extract filename from a relative path."
+                },
+                {
+                    "code": "$ basename /home/user/document.txt .txt\ndocument",
+                    "description": "Extract filename without extension."
+                },
+                {
+                    "code": "$ basename -a /home/user/doc1.txt ../dir1/doc2.txt\ndoc1.txt\ndoc2.txt",
+                    "description": "Extract multiple filenames."
+                },
+                {
+                    "code": "$ basename -s .txt /home/user/doc1.txt ../dir1/doc2.txt\ndoc1\ndoc2",
+                    "description": "Extract multiple filenames without extension."
+                },
+                {
+                    "code": "$ basename ~\nuser",
+                    "description": "Get the user's home directory name."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "dirname"
+            ]
         }
     ]
 }

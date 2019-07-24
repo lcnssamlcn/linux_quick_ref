@@ -6,14 +6,19 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/padding_default">
 
-    <TextView
-        android:id="@+id/command_example_code"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/code_snippet_frame"
+        android:background="@drawable/code_snippet_frame">
+    <TextView
+        android:id="@+id/command_example_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollHorizontally="true"
         android:text=""
         app:fontFamily="monospace"
         android:textColor="@color/text" />
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/command_example_description"
