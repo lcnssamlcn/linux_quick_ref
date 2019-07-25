@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/manpage_premise_code_block_frame"
+    android:layout_marginTop="@dimen/spacing_p_p"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/code_snippet_frame">
+<TextView
+    android:id="@+id/manpage_premise_code"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollHorizontally="true"
+    android:text=""
+    style="@style/activity_manpage.code" />
+</HorizontalScrollView>

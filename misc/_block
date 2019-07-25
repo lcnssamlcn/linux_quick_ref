@@ -1,0 +1,26 @@
+// ----- ManpageActivity.java -----
+static Spanned inflateCodeSnippet(Context context, Spanned spanStr) {
+    Pattern pattern = Pattern.compile(ManpageActivity.TAG_CODE_SNIPPET_OPEN + "(.+?)" + ManpageActivity.TAG_CODE_SNIPPET_CLOSE);
+    Matcher matcher = pattern.matcher(spanStr);
+    SpannableStringBuilder ssb = new SpannableStringBuilder(spanStr.toString());
+    while (matcher.find()) {
+        SpannableString codeSpanStr = new SpannableString(matcher.group(1));
+        codeSpanStr.setSpan(new ImageSpan(context, R.drawable.code_snippet_frame), 0, codeSpanStr.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        ssb.replace(matcher.start(), matcher.end(), codeSpanStr);
+    }
+    Log.i(MainActivity.TAG, "toString: " + ssb.toString());
+    return new SpannableString(ssb);
+}
+// --------------------------------
+// ----- ManpagePremiseAdapter.java -----
+if (segment.isCodeSnippet()) {
+    mpvh.frame.setBackgroundResource(R.drawable.code_snippet_frame);
+    mpvh.segment.setTypeface(Typeface.MONOSPACE);
+    Log.i(MainActivity.TAG, "para: " + segment.getParagraph());
+}
+else {
+    mpvh.segment.setTextAppearance(context, R.style.TextAppearance_AppCompat_Medium);
+    mpvh.segment.setTextColor(ContextCompat.getColor(context, R.color.manpage_p));
+}
+mpvh.segment.setText(segment.getParagraph());
+// --------------------------------------

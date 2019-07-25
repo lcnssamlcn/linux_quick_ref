@@ -6,9 +6,11 @@
     <color name="text">#EFEFEF</color>
     <color name="command_list_item_fg">@color/text</color>
     <color name="command_list_item_bg">#242424</color>
+    <color name="command_list_item_bg_light">#484848</color>
     <color name="code_snippet_frame_bg">#421608</color>
     <color name="code_snippet_frame_border">#0DF9EA</color>
-    <color name="manpage_p">@color/colorAccent</color>
-    <color name="manpage_li">@color/colorAccent</color>
+    <color name="manpage_p">#C5F5D0</color>
+    <color name="manpage_li">@color/manpage_p</color>
     <color name="manpage_a">#A9EAEE</color>
+    <color name="manpage_inline_cmd">#E6ACF2</color>
 </resources>

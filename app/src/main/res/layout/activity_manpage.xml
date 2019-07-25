@@ -18,11 +18,28 @@
 
     <TextView
         android:id="@+id/manpage_cmd_summary"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_h_p"
         android:text=""
         style="@style/activity_manpage.p" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_p_h"
+        android:text="@string/manpage_premise_label"
+        style="@style/activity_manpage.h" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/manpage_premise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_h_p" />
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"

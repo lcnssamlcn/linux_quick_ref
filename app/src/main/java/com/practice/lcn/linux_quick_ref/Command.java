@@ -5,6 +5,7 @@ import java.util.List;
 public class Command {
     private String name;
     private String summary;
+    private List<ManpagePremiseSegment> premise;
     private List<CommandExample> examples;
     private List<String> tips;
     private List<String> relatedCommands;
@@ -15,6 +16,10 @@ public class Command {
 
     public String getSummary() {
         return summary;
+    }
+
+    public List<ManpagePremiseSegment> getPremise() {
+        return premise;
     }
 
     public List<CommandExample> getExamples() {

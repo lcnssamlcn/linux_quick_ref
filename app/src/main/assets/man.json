@@ -119,11 +119,11 @@
                 },
                 {
                     "code": "cat doc1.txt | grep -n keyword",
-                    "description": "Search \"keyword\" in file doc1.txt (exact case search). Matched results will be outputed to the terminal in format\n<line number>:<line with \"keyword\">."
+                    "description": "Search \"keyword\" in file doc1.txt (exact case search). Matched results will be outputed to the terminal in format<br />&lt;line number&gt;:&lt;line with \"keyword\"&gt;."
                 },
                 {
                     "code": "cat doc1.txt | grep -n -i keyword",
-                    "description": "Search \"keyword\" in file doc1.txt (ignore case search). Matched results will be outputed to the terminal in format\n<line number>:<line with \"keyword\">."
+                    "description": "Search \"keyword\" in file doc1.txt (ignore case search). Matched results will be outputed to the terminal in format<br />&lt;line number&gt;:&lt;line with \"keyword\"&gt;."
                 }
             ],
             "tips": [
@@ -171,7 +171,7 @@
         },
         {
             "name": "chmod",
-            "summary": "CHange MODe - change the permission of the file/directory.",
+            "summary": "CHange MODe - Change the permission of the file/directory.",
             "examples": [
                 {
                     "code": "chmod u+r doc1.txt",
@@ -236,7 +236,233 @@
                 "<font color='#FB6967'>r</font>: read permission which determines whether the person can view the file.<br /><font color='#FB6967'>w</font>: write permission which determines whether the person can write the file.<br /><font color='#FB6967'>x</font>: execute permission which determines whether this file can be treated as an executable and run."
             ],
             "relatedCommands": [
-                "chown", "ls"
+                "ls"
+            ]
+        },
+        {
+            "name": "clear",
+            "summary": "Clear the terminal screen.",
+            "examples": [
+                {
+                    "code": "clear",
+                    "description": "Clear the terminal screen."
+                }
+            ],
+            "tips": [
+                "You could also press `Ctrl-l` to clear the terminal screen."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "cp",
+            "summary": "CoPy - Copy a file to somewhere.",
+            "examples": [
+                {
+                    "code": "cp /dir1/doc.txt doc2.txt",
+                    "description": "Copy doc.txt in /dir1 to current working directory and rename as doc2.txt."
+                },
+                {
+                    "code": "cp doc.txt ../",
+                    "description": "Copy doc.txt to the parent directory of the current working directory. If the doc.txt already exists in ../, it will be overwritten."
+                },
+                {
+                    "code": "cp -i doc.txt ../",
+                    "description": "Copy doc.txt to the parent directory of the current working directory. If doc.txt already exists in ../, it will prompt whether it should overwrite ../doc.txt. Answer 'y' to confirm overwrite; answer 'n' to refuse overwrite."
+                },
+                {
+                    "code": "cp -R * /dir1/",
+                    "description": "Copy everything Recursively in the current working directory to /dir1. It also mirrors the files from subdirectories to /dir1. If some files in current working directory already exist in /dir1, they will be overwritten."
+                },
+                {
+                    "code": "cp -n -R * /dir1/",
+                    "description": "Copy everything Recursively in the current working directory to /dir1. It also mirrors the files from subdirectories to /dir1. If some files in currently working directory already exist in /dir1, they will not be overwritten."
+                }
+            ],
+            "tips": [
+                "This is one of the most commonly-used command in daily life so keep it in mind."
+            ],
+            "relatedCommands": [
+                "mv", "rm"
+            ]
+        },
+        {
+            "name": "cut",
+            "summary": "Extract parts from a string.",
+            "examples": [
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f1\nJohn Doe",
+                    "description": "Split the string by Delimiter ',' and extract the first Field."
+                },
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f1-2\nJohn Doe,24",
+                    "description": "Split the string by Delimiter ',' and extract the first and second Field."
+                },
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f-3\nJohn Doe,24,male",
+                    "description": "Split the string by Delimiter ',' and extract the first, second and third Field. Beware that `-f-3` is equivalent as `-f1-3`."
+                },
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f2-\n24,male,true,15000",
+                    "description": "Split the string by Delimiter ',' and extract from the second Field. Beware that `-f2-` is equivalent as `-f2-5` in this case."
+                },
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f1,3\nJohn Doe,male",
+                    "description": "Split the string by Delimiter ',' and extract the first and third Field."
+                },
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f3,1\nJohn Doe,male",
+                    "description": "Split the string by Delimiter ',' and extract the first and third Field. Note that it will NOT change the order even `-f3,1` is specified. The least field number must be outputed first. Then the second least and so on."
+                },
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f3,1,1\nJohn Doe,male",
+                    "description": "Split the string by Delimiter ',' and extract the first and third Field. Note that it will not print duplicate fields. Think {3, 1, 1} as a set. Since no duplicate element is allowed in set, {3, 1, 1} will be evaluated to {3, 1}. Therefore, only the first and third field will be outputed."
+                },
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f1,3-\nJohn Doe,male,true,15000",
+                    "description": "Split the string by Delimiter ',' and extract the first Field, the third one and any field after it."
+                },
+                {
+                    "code": "$ echo \"John Doe,24,male,true,15000\" | cut -d ',' -f2,-3\nJohn Doe,24,male",
+                    "description": "Split the string by Delimiter ',' and extract the second Field, the third field and any field before it. Think {2, 1, 2, 3} as a set. It will be evaluated to {1, 2, 3} so only the first, second and third field will be outputed."
+                },
+                {
+                    "code": "$ basename /path/to/doc1.txt | cut -d '.' -f1\ndoc1",
+                    "description": "Obtain the filename doc1.txt from `basename` command. Then it is passed to `cut` and extract the first Field, aka filename without extension, by delimiter '.'."
+                },
+                {
+                    "code": "$ basename /path/to/doc1.txt | cut -d '.' -f2\ntxt",
+                    "description": "Obtain the filename doc1.txt from `basename` command. Then it is passed to `cut` and extract the second Field, aka the file extension, by delimiter '.'."
+                },
+                {
+                    "code": "$ echo \"Hello World\" | cut -b 1,5\nHo",
+                    "description": "Extract the first and fifth character in string."
+                },
+                {
+                    "code": "$ echo \"Hello World\" | cut -b 5,1\nHo",
+                    "description": "Extract the first and fifth character in string. Note that it will NOT change the order even `-b 5,1` is specified. The least byte number must be outputed first. Then the second least and so on."
+                },
+                {
+                    "code": "$ echo \"Hello World\" | cut -b 2-7\nello W",
+                    "description": "Extract the characters in range [2, 7] from string."
+                },
+                {
+                    "code": "$ echo \"Hello World\" | cut -b 2-7,3\nello W",
+                    "description": "Extract the characters in range [2, 7] and the third character from string. Think {2, 3, 4, 5, 6, 7, 3} as a set. It will be evaluated to {2, 3, 4, 5, 6, 7} so \"ello W\" is outputed."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "date",
+            "summary": "Print current date and time.",
+            "examples": [
+                {
+                    "code": "date",
+                    "description": "Print current date and time."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "cal"
+            ]
+        },
+        {
+            "name": "df",
+            "summary": "Disk Free - Display disk space usage.",
+            "examples": [
+                {
+                    "code": "df",
+                    "description": "Display disk usage of all mounted filesystems."
+                },
+                {
+                    "code": "df /dev/sda1",
+                    "description": "Display disk usage of device /dev/sda1."
+                },
+                {
+                    "code": "df -H /dev/sda1",
+                    "description": "Display disk usage of device /dev/sda1 in Human-readable way. Size will be scaled by the power of 1000. It means 1000 KB = 1 MB; 1,000,000 KB = 1000 MB = 1 GB."
+                },
+                {
+                    "code": "df -h /dev/sda1",
+                    "description": "Display disk usage of device /dev/sda1 in Human-readable way. Size will be scaled by the power of 1024. It means 1024 KB = 1 MB; 1024<small><sup>2</sup></small> KB = 1024 MB = 1 GB."
+                },
+                {
+                    "code": "df -H",
+                    "description": "Display disk usage of all filesystems in Human-readable way. Size will be scaled by the power of 1000. It means 1000 KB = 1 MB; 1,000,000 KB = 1000 MB = 1 GB."
+                },
+                {
+                    "code": "df -h",
+                    "description": "Display disk usage of all filesystems in Human-readable way. Size will be scaled by the power of 1024. It means 1024 KB = 1 MB; 1024<small><sup>2</sup></small> KB = 1024 MB = 1 GB."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "du"
+            ]
+        },
+        {
+            "name": "diff",
+            "summary": "DIFFerence - find the difference between two files in terms of their content.",
+            "premise": [
+                {
+                    "paragraph": "Suppose in file1.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello World\nrandom text 1\nrandom text 2\nrandom text 3\nrandom text 4\nI eat apples.\nApples hate me.\nThe end.",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in file2.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello World\nrandom text 1\nrandom text 2\nrandom text 3\nrandom text 5\nrandom text 45\nrandom text 4\nI eat Apples.\nApples resent me.",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in dir1/",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "dir1\n├── a.txt\n├── b.txt\n├── dir11\n│   └── a.txt\n└── d.txt",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in dir2/",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "dir2\n├── a.TXT\n├── c.txt\n├── dir11\n└── d.txt",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ diff -y file1.txt file2.txt\nHello World      Hello World\nrandom text 1    random text 1\nrandom text 2    random text 2\nrandom text 3    random text 3\n                 > random text 5\n                 > random text 45\nrandom text 4    random text 4\nI eat apples.    | I eat Apples.\nApples hate me.  | Apples resent me.\nThe end.         <",
+                    "description": "Find the difference between two files in terms of content in a pretty format. <font color='#FB6967'>&gt;</font> means the line is missing in file1.txt; <font color='#FB6967'>&lt;</font> means the line is missing in file2.txt; <font color='#FB6967'>|</font> means the line is similar between two files but different."
+                },
+                {
+                    "code": "$ diff -y -i file1.txt file2.txt\nHello World      Hello World\nrandom text 1    random text 1\nrandom text 2    random text 2\nrandom text 3    random text 3\n                 > random text 5\n                 > random text 45\nrandom text 4    random text 4\nI eat apples.    I eat Apples.\nApples hate me.  | Apples resent me.\nThe end.         <",
+                    "description": "Find the difference between two files in terms of content (Ignore case) in a pretty format."
+                }
+            ],
+            "tips": [
+                "Using `vimdiff file1.txt file2.txt` is more convenient than `diff` since the former supports syntax highlighting. You can also edit the file on the fly."
+            ],
+            "relatedCommands": [
+
             ]
         }
     ]

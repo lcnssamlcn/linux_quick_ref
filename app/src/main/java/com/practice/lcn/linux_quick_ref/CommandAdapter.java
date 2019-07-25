@@ -3,6 +3,7 @@ package com.practice.lcn.linux_quick_ref;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -51,7 +52,7 @@ public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CommandV
     public void onBindViewHolder(@NonNull CommandViewHolder cvh, int pos) {
         cvh.setIsRecyclable(false);
         if (pos % 2 == 1)
-            cvh.title.setBackgroundColor(0xFF484848);
+            cvh.title.setBackgroundColor(ContextCompat.getColor(context, R.color.command_list_item_bg_light));
         cvh.title.setText(filteredCommands.get(pos));
         cvh.title.setOnClickListener(new View.OnClickListener() {
             @Override

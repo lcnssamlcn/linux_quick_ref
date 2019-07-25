@@ -1,10 +1,13 @@
 package com.practice.lcn.linux_quick_ref;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.text.HtmlCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,11 +15,14 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.BulletSpan;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.ImageSpan;
 import android.text.style.TypefaceSpan;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.List;
@@ -26,11 +32,13 @@ import java.util.regex.Pattern;
 public class ManpageActivity extends AppCompatActivity {
     TextView cmdName;
     TextView summary;
+    RecyclerView premise;
     RecyclerView examples;
     TextView tips;
     TextView relatedCommands;
 
-    static final int INLINE_CMD_COLOR = 0xFFE6ACF2;
+    static final String TAG_CODE_SNIPPET_OPEN = "<code-snippet>";
+    static final String TAG_CODE_SNIPPET_CLOSE = "</code-snippet>";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +55,13 @@ public class ManpageActivity extends AppCompatActivity {
         summary = findViewById(R.id.manpage_cmd_summary);
         summary.setText(command.getSummary());
 
+        premise = findViewById(R.id.manpage_premise);
+        if (command.getPremise() != null) {
+            premise.setLayoutManager(new LinearLayoutManager(this));
+            premise.setNestedScrollingEnabled(false);
+            premise.setAdapter(new ManpagePremiseAdapter(this, command.getPremise()));
+        }
+
         examples = findViewById(R.id.manpage_cmd_examples);
         examples.setLayoutManager(new LinearLayoutManager(this));
         examples.setNestedScrollingEnabled(false);
@@ -56,15 +71,15 @@ public class ManpageActivity extends AppCompatActivity {
             divider.setDrawable(dividerDrawable);
             examples.addItemDecoration(divider);
         }
-        examples.setAdapter(new CommandExampleAdapter(command.getExamples()));
+        examples.setAdapter(new CommandExampleAdapter(this, command.getExamples()));
 
         tips = findViewById(R.id.manpage_cmd_tips);
         CharSequence tipsSpanStr = new SpannableString("");
         List<String> tipsList = command.getTips();
         for (int i = 0; i < tipsList.size(); i++) {
-            SpannableString tipSpanStr = new SpannableString(Html.fromHtml(tipsList.get(i)));
+            SpannableString tipSpanStr = new SpannableString(ManpageActivity.fromHtmlCompat(tipsList.get(i)));
             tipSpanStr.setSpan(new BulletSpan(10, 0xFFEFEFEF), 0, tipSpanStr.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-            ManpageActivity.applyStyleOnCommands(tipSpanStr);
+            ManpageActivity.applyStyleOnCommands(this, tipSpanStr);
             tipsSpanStr = TextUtils.concat(tipsSpanStr, tipSpanStr);
             if (i != tipsList.size() - 1)
                 tipsSpanStr = TextUtils.concat(tipsSpanStr, "\n");
@@ -85,12 +100,19 @@ public class ManpageActivity extends AppCompatActivity {
         relatedCommands.setText(relatedCommandsSpanStr);
     }
 
-    static void applyStyleOnCommands(Spannable spanStr) {
+    static void applyStyleOnCommands(Context context, Spannable spanStr) {
         Pattern pattern = Pattern.compile("`.+?`");
         Matcher matcher = pattern.matcher(spanStr);
         while (matcher.find()) {
             spanStr.setSpan(new TypefaceSpan("monospace"), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-            spanStr.setSpan(new ForegroundColorSpan(ManpageActivity.INLINE_CMD_COLOR), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            spanStr.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.manpage_inline_cmd)), matcher.start(), matcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
+    }
+
+    static Spanned fromHtmlCompat(String htmlStr) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+            return Html.fromHtml(htmlStr, Html.FROM_HTML_MODE_LEGACY);
+        else
+            return Html.fromHtml(htmlStr);
     }
 }

@@ -1,7 +1,10 @@
 package com.practice.lcn.linux_quick_ref;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.text.HtmlCompat;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class CommandExampleAdapter extends RecyclerView.Adapter<CommandExampleAdapter.CommandExampleViewHolder> {
+    private Context context;
     private List<CommandExample> examples;
 
     public static class CommandExampleViewHolder extends RecyclerView.ViewHolder {
@@ -24,7 +28,8 @@ public class CommandExampleAdapter extends RecyclerView.Adapter<CommandExampleAd
         }
     }
 
-    public CommandExampleAdapter(List<CommandExample> examples) {
+    public CommandExampleAdapter(Context context, List<CommandExample> examples) {
+        this.context = context;
         this.examples = examples;
     }
 
@@ -39,8 +44,8 @@ public class CommandExampleAdapter extends RecyclerView.Adapter<CommandExampleAd
     public void onBindViewHolder(@NonNull CommandExampleViewHolder cevh, int pos) {
         CommandExample example = examples.get(pos);
         cevh.code.setText(example.getCode());
-        SpannableString desc = new SpannableString(example.getDescription());
-        ManpageActivity.applyStyleOnCommands(desc);
+        SpannableString desc = new SpannableString(ManpageActivity.fromHtmlCompat(example.getDescription()));
+        ManpageActivity.applyStyleOnCommands(context, desc);
         cevh.description.setText(desc);
     }
 
@@ -48,5 +53,4 @@ public class CommandExampleAdapter extends RecyclerView.Adapter<CommandExampleAd
     public int getItemCount() {
         return examples.size();
     }
-
 }
