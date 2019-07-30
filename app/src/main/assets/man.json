@@ -6,11 +6,11 @@
             "examples": [
                 {
                     "code": "alias -p",
-                    "description": "Print all existing alias defined in your shell"
+                    "description": "Print all existing alias defined in your shell."
                 },
                 {
                     "code": "alias ll=\"ls -l\"",
-                    "description": "Create an alias for command `ls -l` so that you just need to type `ll` next time to achieve the same goal. It is no need to enter the full command anymore."
+                    "description": "Create an alias for command `ls -l` so that typing `ll` will automatically issue `ls -l` command. It is not necessary to enter the full command anymore."
                 },
                 {
                     "code": "alias rm=\"rm -i\"",
@@ -18,7 +18,8 @@
                 }
             ],
             "tips": [
-                "You can store all your aliases to ~/.bashrc so that they can be used permanently."
+                "You can store all your aliases to `~/.bashrc` so that they can be used permanently.",
+                "See `man bash` for the documentation of `alias`."
             ],
             "relatedCommands": [
                 "unalias",
@@ -67,11 +68,11 @@
             "examples": [
                 {
                     "code": "cal",
-                    "description": "Show calendar in current month this year."
+                    "description": "Show calendar of current month this year."
                 },
                 {
                     "code": "cal 10 2019",
-                    "description": "Show calendar in October, 2019."
+                    "description": "Show calendar of October, 2019."
                 },
                 {
                     "code": "cal 2020",
@@ -79,7 +80,7 @@
                 },
                 {
                     "code": "cal -m 10",
-                    "description": "Show calendar in October this year."
+                    "description": "Show calendar of October this year."
                 },
                 {
                     "code": "cal -m 3 -3",
@@ -103,27 +104,27 @@
             "examples": [
                 {
                     "code": "cat /path/to/document.txt",
-                    "description": "Print the contents in file /path/to/document.txt."
+                    "description": "Print the contents in file `/path/to/document.txt`."
                 },
                 {
                     "code": "cat doc1.txt doc2.txt doc3.txt",
-                    "description": "Print the contents in all files doc1.txt, doc2.txt and doc3.txt."
+                    "description": "Print the contents in all files `doc1.txt`, `doc2.txt` and `doc3.txt`."
                 },
                 {
                     "code": "cat doc1.txt doc2.txt > doc12_combined.txt",
-                    "description": "Concatenate the contents in doc1.txt and doc2.txt and save it as doc12_combined.txt."
+                    "description": "Concatenate the contents in `doc1.txt` and `doc2.txt` and save it as `doc12_combined.txt`."
                 },
                 {
                     "code": "cat -n doc1.txt",
-                    "description": "Print the contents in file doc1.txt with line number."
+                    "description": "Print the contents in file `doc1.txt` with line number."
                 },
                 {
                     "code": "cat doc1.txt | grep -n keyword",
-                    "description": "Search \"keyword\" in file doc1.txt (exact case search). Matched results will be outputed to the terminal in format<br />&lt;line number&gt;:&lt;line with \"keyword\"&gt;."
+                    "description": "Search \"keyword\" in file `doc1.txt` (exact case search). Matched results will be outputed to the terminal in format<br />&nbsp;&nbsp;<font color='#E6ACF2'>&lt;line number&gt;:&lt;line with \"keyword\"&gt;</font>."
                 },
                 {
                     "code": "cat doc1.txt | grep -n -i keyword",
-                    "description": "Search \"keyword\" in file doc1.txt (ignore case search). Matched results will be outputed to the terminal in format<br />&lt;line number&gt;:&lt;line with \"keyword\"&gt;."
+                    "description": "Search \"keyword\" in file `doc1.txt` (ignore case search). Matched results will be outputed to the terminal in format<br />&nbsp;&nbsp;<font color='#E6ACF2'>&lt;line number&gt;:&lt;line with \"keyword\"&gt;</font>."
                 }
             ],
             "tips": [
@@ -143,7 +144,7 @@
                 },
                 {
                     "code": "cd /dir1/dir2",
-                    "description": "Navigate to directory /dir1/dir2."
+                    "description": "Navigate to directory `/dir1/dir2`."
                 },
                 {
                     "code": "cd ..",
@@ -155,7 +156,7 @@
                 },
                 {
                     "code": "cd ../dir1",
-                    "description": "Navigate to the parent directory and then move to dir1."
+                    "description": "Navigate to the parent directory and then move to `dir1`."
                 },
                 {
                     "code": "cd -",
@@ -175,27 +176,27 @@
             "examples": [
                 {
                     "code": "chmod u+r doc1.txt",
-                    "description": "Add the Read permission for the User who owned this file doc1.txt."
+                    "description": "Add the Read permission for the User who owned this file `doc1.txt`."
                 },
                 {
                     "code": "chmod u+w doc1.txt",
-                    "description": "Add the Write permission for the User who owned this file doc1.txt."
+                    "description": "Add the Write permission for the User who owned this file `doc1.txt`."
                 },
                 {
                     "code": "chmod u+x a.out",
-                    "description": "Add the eXecute permission for the User who owned this file a.out."
+                    "description": "Add the eXecute permission for the User who owned this file `a.out`."
                 },
                 {
                     "code": "chmod u+rx a.out",
-                    "description": "Add the Read and eXecute permission for the User who owned this file a.out."
+                    "description": "Add the Read and eXecute permission for the User who owned this file `a.out`."
                 },
                 {
                     "code": "chmod u-r a.out",
-                    "description": "Remove the Read permission for the User who owned this file a.out."
+                    "description": "Remove the Read permission for the User who owned this file `a.out`."
                 },
                 {
                     "code": "chmod u-rwx a.out",
-                    "description": "Remove the Read, Write and eXecute permission for the User who owned this file a.out."
+                    "description": "Remove the Read, Write and eXecute permission for the User who owned this file `a.out`."
                 },
                 {
                     "code": "chmod g+r doc.txt",
@@ -219,21 +220,41 @@
                 },
                 {
                     "code": "chmod u+x *.sh",
-                    "description": "Add the eXecute permission for all files with the suffix .sh to the User who owned this file."
+                    "description": "Add the eXecute permission for all files with the suffix \".sh\" to the User who owned this file."
                 },
                 {
                     "code": "chmod 644 doc1.txt",
-                    "description": "Set the permission of the file to \"rw-r--r--\". Note that it uses octal numeric system to represent permission. \"644\" is an octal number. Deciphering it into binary we get \"110 100 100\". 1 means to turn the permission on and 0 is off. For the first field \"110\", the leftmost 1 means to toggle the read permission on; the middle 1 means to toggle the write permission on; the last 0 means to turn off the execute permission. This process is similar for \"100\" and \"100\". Therefore, we get \"rw-r--r--\" at last."
+                    "description": "Set the permission of the file to `rw-r--r--`. Note that it uses octal numeric system to represent permission. `644` is an octal number. Deciphering it into binary we get `110 100 100`. 1 means to turn the permission on and 0 is off. For the first field `110`, the leftmost 1 means to toggle the read permission on; the middle 1 means to toggle the write permission on; the last 0 means to turn off the execute permission. This process is similar for `100` and `100`. Therefore, we get `rw-r--r--` at last."
                 },
                 {
                     "code": "chmod 040 doc1.txt",
-                    "description": "Set the permission of the file to \"--- r-- ---\". That means only the file owner's group except the file owner can see the content of the file."
+                    "description": "Set the permission of the file to `--- r-- ---`. That means only the file owner's group except the file owner can see the content of the file."
                 }
             ],
             "tips": [
                 "For your information, permission of any file/directory can be viewed via `ls -l`.",
                 "<font color='#FB6967'>u</font>: user, owner of the file/directory.<br /><font color='#FB6967'>g</font>: file/directory owner's group.<br /><font color='#FB6967'>o</font>: outsiders/public who don't belong to the owner's group.",
                 "<font color='#FB6967'>r</font>: read permission which determines whether the person can view the file.<br /><font color='#FB6967'>w</font>: write permission which determines whether the person can write the file.<br /><font color='#FB6967'>x</font>: execute permission which determines whether this file can be treated as an executable and run."
+            ],
+            "relatedCommands": [
+                "ls"
+            ]
+        },
+        {
+            "name": "chown",
+            "summary": "CHange OWNership of a file/directory.",
+            "examples": [
+                {
+                    "code": "sudo chown -R user:user_group dir1",
+                    "description": "CHange OWNership of the directory `dir1` recursively."
+                },
+                {
+                    "code": "sudo chown user:user_group a.txt",
+                    "description": "CHange OWNership of the file `a.txt`."
+                }
+            ],
+            "tips": [
+
             ],
             "relatedCommands": [
                 "ls"
@@ -261,23 +282,23 @@
             "examples": [
                 {
                     "code": "cp /dir1/doc.txt doc2.txt",
-                    "description": "Copy doc.txt in /dir1 to current working directory and rename as doc2.txt."
+                    "description": "Copy `doc.txt` in `/dir1` to current working directory and rename as `doc2.txt`. If `./doc2.txt` already exists, it will be overwritten."
                 },
                 {
                     "code": "cp doc.txt ../",
-                    "description": "Copy doc.txt to the parent directory of the current working directory. If the doc.txt already exists in ../, it will be overwritten."
+                    "description": "Copy `doc.txt` to the parent directory of the current working directory. If the `doc.txt` already exists in `../`, it will be overwritten."
                 },
                 {
                     "code": "cp -i doc.txt ../",
-                    "description": "Copy doc.txt to the parent directory of the current working directory. If doc.txt already exists in ../, it will prompt whether it should overwrite ../doc.txt. Answer 'y' to confirm overwrite; answer 'n' to refuse overwrite."
+                    "description": "Copy `doc.txt` to the parent directory of the current working directory. If `doc.txt` already exists in `../`, it will prompt whether it should overwrite `../doc.txt`. Answer 'y' to confirm overwrite; answer 'n' to refuse overwrite."
                 },
                 {
                     "code": "cp -R * /dir1/",
-                    "description": "Copy everything Recursively in the current working directory to /dir1. It also mirrors the files from subdirectories to /dir1. If some files in current working directory already exist in /dir1, they will be overwritten."
+                    "description": "Copy everything Recursively in the current working directory to `/dir1`. It also mirrors the files from subdirectories to `/dir1`. If some files in current working directory already exist in `/dir1`, they will be overwritten."
                 },
                 {
                     "code": "cp -n -R * /dir1/",
-                    "description": "Copy everything Recursively in the current working directory to /dir1. It also mirrors the files from subdirectories to /dir1. If some files in currently working directory already exist in /dir1, they will not be overwritten."
+                    "description": "Copy everything Recursively in the current working directory to `/dir1`. It also mirrors the files from subdirectories to `/dir1`. If some files in currently working directory already exist in `/dir1`, they will not be overwritten."
                 }
             ],
             "tips": [
@@ -385,15 +406,15 @@
                 },
                 {
                     "code": "df /dev/sda1",
-                    "description": "Display disk usage of device /dev/sda1."
+                    "description": "Display disk usage of device `/dev/sda1`."
                 },
                 {
                     "code": "df -H /dev/sda1",
-                    "description": "Display disk usage of device /dev/sda1 in Human-readable way. Size will be scaled by the power of 1000. It means 1000 KB = 1 MB; 1,000,000 KB = 1000 MB = 1 GB."
+                    "description": "Display disk usage of device `/dev/sda1` in Human-readable way. Size will be scaled by the power of 1000. It means 1000 KB = 1 MB; 1,000,000 KB = 1000 MB = 1 GB."
                 },
                 {
                     "code": "df -h /dev/sda1",
-                    "description": "Display disk usage of device /dev/sda1 in Human-readable way. Size will be scaled by the power of 1024. It means 1024 KB = 1 MB; 1024<small><sup>2</sup></small> KB = 1024 MB = 1 GB."
+                    "description": "Display disk usage of device `/dev/sda1` in Human-readable way. Size will be scaled by the power of 1024. It means 1024 KB = 1 MB; 1024<small><sup>2</sup></small> KB = 1024 MB = 1 GB."
                 },
                 {
                     "code": "df -H",
@@ -413,7 +434,7 @@
         },
         {
             "name": "diff",
-            "summary": "DIFFerence - find the difference between two files in terms of their content.",
+            "summary": "DIFFerence - find the difference between two files in terms of their content or between two directories in terms of each filename.",
             "premise": [
                 {
                     "paragraph": "Suppose in file1.txt",
@@ -456,6 +477,18 @@
                 {
                     "code": "$ diff -y -i file1.txt file2.txt\nHello World      Hello World\nrandom text 1    random text 1\nrandom text 2    random text 2\nrandom text 3    random text 3\n                 > random text 5\n                 > random text 45\nrandom text 4    random text 4\nI eat apples.    I eat Apples.\nApples hate me.  | Apples resent me.\nThe end.         <",
                     "description": "Find the difference between two files in terms of content (Ignore case) in a pretty format."
+                },
+                {
+                    "code": "$ diff dir1 dir2\nOnly in dir1: a.txt\nOnly in dir2: a.TXT\nOnly in dir1: b.txt\nOnly in dir2: c.txt\nCommon subdirectories: dir1/dir11 and dir2/dir11",
+                    "description": "Find the difference between two folders, `./dir1` and `./dir2` by comparing each filename in folders. Note that it will not compare the difference in subdirectories of `./dir1` and `./dir2`: `./dir1/dir11` and `./dir2/dir11`."
+                },
+                {
+                    "code": "$ diff --ignore-file-name-case dir1 dir2\nOnly in dir1: b.txt\nOnly in dir2: c.txt\nCommon subdirectories: dir1/dir11 and dir2/dir11",
+                    "description": "Find the difference between two folders, `./dir1` and `./dir2` by comparing each filename in folders (ignoring filename case). Note that it will not compare the difference in subdirectories of `./dir1` and `./dir2`: `./dir1/dir11` and `./dir2/dir11`."
+                },
+                {
+                    "code": "$ diff -r dir1 dir2\nOnly in dir1: a.txt\nOnly in dir2: a.TXT\nOnly in dir1: b.txt\nOnly in dir2: c.txt\nOnly in dir1/dir11: a.txt",
+                    "description": "Find the difference between two folders Recursively, `./dir1` and `./dir2` by comparing each filename in folders."
                 }
             ],
             "tips": [
@@ -463,6 +496,1912 @@
             ],
             "relatedCommands": [
 
+            ]
+        },
+        {
+            "name": "dirname",
+            "summary": "Get the DIRectory NAME of the directory/file.",
+            "premise": [
+                {
+                    "paragraph": "Suppose the current folder structure",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "/\n└── home\n    └── user\n        ├── doc.txt\n        ├── dir1\n        └── img1.png",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "$ pwd\n/home/user",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ dirname /home/user/doc.txt\n/home/user",
+                    "description": "Get the directory path of the file."
+                },
+                {
+                    "code": "$ dirname doc.txt\n.",
+                    "description": "If you does not provide any `/` in path, it will always return `.` to represent it is in current working directory."
+                },
+                {
+                    "code": "$ dirname dir1/img1.png\ndir1",
+                    "description": "If you provide a relative path, it will also return the relative path but not absolute path."
+                },
+                {
+                    "code": "$ dirname /home/user/dir1\n/home/user",
+                    "description": "Get the parent directory path of the directory, dir1."
+                }
+            ],
+            "tips": [
+                "It is more often used in shell script than in terminal."
+            ],
+            "relatedCommands": [
+                "basename"
+            ]
+        },
+        {
+            "name": "du",
+            "summary": "Disk Usage - show the current stats about how much space the directory/file occupies.",
+            "examples": [
+                {
+                    "code": "du -sh",
+                    "description": "Summarize how much space the current working directory occupies in a Human-readable way. Size will be scaled by the power of 1000. It means 1000 KB = 1 MB; 1,000,000 KB = 1000 MB = 1 GB."
+                },
+                {
+                    "code": "du -sh dir1",
+                    "description": "Summarize how much space the directory `./dir1` occupies in a Human-readable way."
+                },
+                {
+                    "code": "du -ah",
+                    "description": "Recursively show how much space each file/directory (including hidden one) occupies in current working directory."
+                },
+                {
+                    "code": "du -ah dir1/*",
+                    "description": "Recursively show how much space the directory `./dir1` occupies in a Human-readable way."
+                },
+                {
+                    "code": "du -ah dir1/* | sort -h -r | head -10",
+                    "description": "Show top-10 largest files/directories in directory `./dir1`."
+                },
+                {
+                    "code": "du -h doc.txt",
+                    "description": "Show how much space the `doc.txt` occupies in a Human-readable way."
+                },
+                {
+                    "code": "du -h -d 1",
+                    "description": "Show how much space each directory occupies under current working directory in a Human-readable way."
+                },
+                {
+                    "code": "du -ah -d 1",
+                    "description": "Show how much space each file and directory (depth level 1) occupies under current working directory in a Human-readable way."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "df"
+            ]
+        },
+        {
+            "name": "echo",
+            "summary": "Write message to the terminal.",
+            "examples": [ 
+                {
+                    "code": "$ echo Hello World\nHello World",
+                    "description": "Write the message \"Hello World\" to the terminal and the terminal will echo back the same message to you."
+                },
+                {
+                    "code": "echo I ate 7 pizzas today. >> doc.txt",
+                    "description": "Append the message \"I ate 7 pizzas today.\" to the end of the `doc.txt`."
+                },
+                {
+                    "code": "$ echo -e \"Hello World\\nrandom text 1\\n random text 2\" > doc.txt\n$ cat doc.txt\nHello World\nrandom text 1\nrandom text 2",
+                    "description": "Write the message to the file `doc.txt` with Escape sequence (\\n)."
+                }
+            ],
+            "tips": [
+                "This is one of the most commonly-used commands so keep it in mind."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "export",
+            "summary": "Add/Set/Remove an environment variable.",
+            "examples": [
+                {
+                    "code": "export -p",
+                    "description": "Print all environment variables in your shell."
+                },
+                {
+                    "code": "$ export ABC=\"Hello World\"\n$ echo $ABC\nHello World",
+                    "description": "Add/Set an environment variable `ABC` with value \"Hello World\"."
+                },
+                {
+                    "code": "export -n ABC",
+                    "description": "Remove the environment variable `ABC`."
+                }
+            ],
+            "tips": [
+                "You can store all your custom exports to `~/.bashrc` and `$PATH` to `~/.bash_profile` so that they will be set permanently.",
+                "See `man bash` for the documentation of `export`."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "file",
+            "summary": "Determine FILE type.",
+            "examples": [
+                {
+                    "code": "$ file doc.txt\ndoc.txt: ASCII text",
+                    "description": "Determine file type of the `doc.txt`."
+                },
+                {
+                    "code": "$ file --mime doc.txt\ndoc.txt: text/plain; charset=us-ascii",
+                    "description": "Determine the MIME type and encoding of the file `doc.txt`."
+                },
+                {
+                    "code": "$ file a.txt a.html\na.txt: ASCII text\na.html: HTML document, ASCII text",
+                    "description": "Determine file type of files `a.txt` and `a.html`."
+                },
+                {
+                    "code": "$ sudo file -s /dev/sda1\n/dev/sda1: Linux rev 1.0 ext4 filesystem data, UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (needs journal recovery) (extents) (large files) (huge files)",
+                    "description": "Determine the file type of the special file `/dev/sda1`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "find",
+            "summary": "FIND file(s)/directory(ies) matching the criteria we have specified.",
+            "premise": [
+                {
+                    "paragraph": "Suppose the directory structure to be",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": ".\n├── a.txt\n├── bcd.jar\n├── b.txt\n├── c.txt\n├── dir1\n│   ├── abc.txt\n│   ├── dir11\n│   │   ├── a.txt\n│   │   └── a.zip\n│   └── z.txt\n├── dir2\n│   ├── img10.png\n│   ├── img11.png\n│   ├── img12.png\n│   ├── img1.png\n│   ├── img2.png\n│   ├── img3.png\n│   ├── img4.png\n│   ├── img5.png\n│   ├── img6.png\n│   ├── img7.png\n│   ├── img8.png\n│   └── img9.png\n└── dir3\n    ├── album.png\n    ├── a.mp3\n    ├── b.mp3\n    ├── c.mp3\n    └── t.txt",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": ".:\ntotal 12\n-rw-r--r-- 1 user    0 Jul 27 14:13 a.txt\n-rw-rw-r-- 1 user    0 Jul 27 14:13 bcd.jar\n-rw-rw-r-- 1 user    0 Jul 27 14:13 b.txt\n-rw-rw-r-- 1 user    0 Jul 27 14:13 c.txt\ndrwxrwxr-x 3 user 4096 Jul 27 14:35 dir1/\ndrwxrwxr-x 2 user 4096 Jul 27 14:16 dir2/\ndrwxrwxr-x 2 user 4096 Jul 27 14:23 dir3/\n\n./dir1:\ntotal 4\n-rw-rw-r-- 1 user    0 Jul 27 14:35 abc.txt\ndrwxrwxr-x 2 user 4096 Jul 27 14:14 dir11/\n-rw-rw-r-- 1 user    0 Jul 27 14:14 z.txt\n\n./dir1/dir11:\ntotal 0\n-rw-rw-r-- 1 user 0 Jul 27 14:14 a.txt\n-rw-rw-r-- 1 user 0 Jul 27 14:14 a.zip\n\n./dir2:\ntotal 0\n-rw-rw-r-- 1 user 0 Jul 27 14:16 img10.png\n-rw-rw-r-- 1 user 0 Jul 27 14:16 img11.png\n-rw-rw-r-- 1 user 0 Jul 27 14:16 img12.png\n-rw-rw-r-- 1 user 0 Jul 27 14:15 img1.png\n-rw-rw-r-- 1 user 0 Jul 27 14:15 img2.png\n-rw-rw-r-- 1 user 0 Jul 27 14:15 img3.png\n-rw-rw-r-- 1 user 0 Jul 27 14:15 img4.png\n-rw-rw-r-- 1 user 0 Jul 27 14:16 img5.png\n-rw-rw-r-- 1 user 0 Jul 27 14:16 img6.png\n-rw-rw-r-- 1 user 0 Jul 27 14:16 img7.png\n-rw-rw-r-- 1 user 0 Jul 27 14:16 img8.png\n-rw-rw-r-- 1 user 0 Jul 27 14:16 img9.png\n\n./dir3:\ntotal 0\n-rw-rw-r-- 1 user 0 Jul 27 14:16 album.png\n-rw-rw-r-- 1 user 0 Jul 27 14:16 a.mp3\n-rw-r--r-- 1 user 0 Jul 27 14:16 b.mp3\n-rw-rw-r-- 1 user 0 Jul 27 14:16 c.mp3\n-rw-rw-r-- 1 user 0 Jul 27 14:23 t.txt",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "find . -name \"a.txt\"\n./dir1/dir11/a.txt\n./a.txt",
+                    "description": "Search for a file NAMEd `a.txt` recursively under current working directory."
+                },
+                {
+                    "code": "find dir1 -name \"a.txt\"\ndir1/dir11/a.txt",
+                    "description": "Search for a file NAMEd `a.txt` recursively under `./dir1`."
+                },
+                {
+                    "code": "find . -name \"*.txt\"\n./b.txt\n./dir1/abc.txt\n./dir1/z.txt\n./dir1/dir11/a.txt\n./c.txt\n./a.txt\n./dir3/t.txt",
+                    "description": "Search for any file with extension \"txt\" under current working directory."
+                },
+                {
+                    "code": "find . -name \"img*.png\"\n./dir2/img1.png\n./dir2/img2.png\n./dir2/img3.png\n./dir2/img4.png\n./dir2/img5.png\n./dir2/img6.png\n./dir2/img7.png\n./dir2/img8.png\n./dir2/img9.png\n./dir2/img10.png\n./dir2/img11.png\n./dir2/img12.png",
+                    "description": "Search for any file having prefix \"img\" and suffix \".png\" under current working directory."
+                },
+                {
+                    "code": "find . -name \"img?.png\"\n./dir2/img1.png\n./dir2/img2.png\n./dir2/img3.png\n./dir2/img4.png\n./dir2/img5.png\n./dir2/img6.png\n./dir2/img7.png\n./dir2/img8.png\n./dir2/img9.png",
+                    "description": "Search for any file having prefix \"img\" and suffix \".png\" under current working directory. The difference between the above example and this one is that <font color='#FB6967'>*</font> accepts arbitary number of characters while <font color='#FB6967'>?</font> accepts any ONE character."
+                },
+                {
+                    "code": "find . -name \"[abcz].txt\"\n./b.txt\n./dir1/z.txt\n./dir1/dir11/a.txt\n./c.txt\n./a.txt",
+                    "description": "Search for file `a.txt` <b>or</b> `b.txt` <b>or</b> `c.txt` <b>or</b> `z.txt` under current working directory."
+                },
+                {
+                    "code": "find . -name \"[abcz]*.txt\"\n./b.txt\n./dir1/z.txt\n./dir1/abc.txt\n./dir1/dir11/a.txt\n./c.txt\n./a.txt",
+                    "description": "Search for file with prefix 'a' or 'b' or 'c' or 'z' and suffix \".txt\" under current working directory."
+                },
+                {
+                    "code": "find . -mindepth 1 -maxdepth 1 -name \"*.txt\"\n./a.txt\n./b.txt\n./c.txt",
+                    "description": "Search for file in depth level 1 `./` under current working directory. Depth level 0 means the directory itself `.`; depth level 1 is the directory content `./`; depth level 2 is the subdirectory content `./dir1`, `./dir2` and `./dir3` and so on."
+                },
+                {
+                    "code": "find . -mindepth 2 -maxdepth 2 -name \"*.txt\"\n./dir1/z.txt\n./dir1/abc.txt\n./dir3/t.txt",
+                    "description": "Search for file in depth level 2 under current working directory."
+                },
+                {
+                    "code": "find . -mindepth 1 -maxdepth 1 -type d\n./dir1\n./dir2\n./dir3",
+                    "description": "Search for Directories in depth level 1 under current working directory."
+                },
+                {
+                    "code": "find . -regextype sed -regex \".*/img.\\.png\"\n./dir2/img1.png\n./dir2/img2.png\n./dir2/img3.png\n./dir2/img4.png\n./dir2/img5.png\n./dir2/img6.png\n./dir2/img7.png\n./dir2/img8.png\n./dir2/img9.png",
+                    "description": "Search files by regex (regular expression) pattern using \"sed\" regex parser."
+                },
+                {
+                    "code": "find . -name \"*.txt\" -or -name \"*.png\"\n./b.txt\n./dir1/z.txt\n./dir1/abc.txt\n./dir1/dir11/a.txt\n./c.txt\n./dir2/img8.png\n./dir2/img6.png\n./dir2/img5.png\n./dir2/img10.png\n./dir2/img3.png\n./dir2/img1.png\n./dir2/img7.png\n./dir2/img12.png\n./dir2/img4.png\n./dir2/img2.png\n./dir2/img9.png\n./dir2/img11.png\n./a.txt\n./dir3/t.txt\n./dir3/album.png",
+                    "description": "Search files with extension either \"txt\" or \"png\"."
+                },
+                {
+                    "code": "find . -name \"*.txt\" -not -name \"a*.txt\"\n./b.txt\n./dir1/z.txt\n./c.txt\n./dir3/t.txt",
+                    "description": "Search files with extension \"txt\" but not starting with 'a'."
+                },
+                {
+                    "code": "find . -perm 644\n./a.txt\n./dir3/b.mp3",
+                    "description": "Search files with permission exactly `rw-r--r--` If you do not understand what `644` means, see `chmod`."
+                },
+                {
+                    "code": "find . -name \"*.txt\" -exec rm {} \\;",
+                    "description": "Search files with extension \"txt\" and remove them all. Note that `{}` will be replaced with the matched results so that it is possible to do removal."
+                },
+                {
+                    "code": "find . -mindepth 1 -maxdepth 1 -name \"*.txt\" -exec vim -p {} +",
+                    "description": "Search files with extension \"txt\" in depth level 1 (`./a.txt`, `./b.txt` and `./c.txt`) and edit all of them in tab mode using `vim`. The difference between the above example, `\\;`, and this one, `+`, is that the former will execute the command one by one; the latter will concatenate all matched results and execute the command. For example, the above example will be evaluated as `rm ./a.txt; rm ./b.txt; rm ./c.txt; rm ./dir1/abc.txt; rm ./dir1/z.txt; rm ./dir1/dir11/a.txt; rm ./dir3/t.txt`. This example will be evaluated as `vim -p ./a.txt ./b.txt ./c.txt`."
+                },
+                {
+                    "code": "find . -name \"*.txt\" -exec zip result.zip {} +\nadding: b.txt (stored 0%)\nadding: dir1/z.txt (stored 0%)\nadding: dir1/abc.txt (stored 0%)\nadding: dir1/dir11/a.txt (stored 0%)\nadding: c.txt (stored 0%)\nadding: a.txt (stored 0%)\nadding: dir3/t.txt (stored 0%)\n$ unzip -l result.zip\nArchive:  result.zip\nLength        Date    Time    Name\n---------  ---------- -----   ----\n0          2019-07-27 15:58   b.txt\n0          2019-07-27 15:58   dir1/z.txt\n0          2019-07-27 15:58   dir1/abc.txt\n0          2019-07-27 15:58   dir1/dir11/a.txt\n0          2019-07-27 15:58   c.txt\n0          2019-07-27 15:58   a.txt\n0          2019-07-27 15:58   dir3/t.txt\n---------                     -------\n0                             7 files",
+                    "description": "Search files with extension \"txt\" and compress all of them into a zip file `result.zip`. The first statement is equivalent as `zip result.zip ./b.txt ./dir1/z.txt ./dir1/abc.txt ./dir1/dir11/a.txt ./c.txt ./a.txt ./dir3/t.txt`."
+                }
+            ],
+            "tips": [
+                "-name Metacharacters:<br /><font color='#FB6967'>*</font>: matching arbitary number of character<br /><font color='#FB6967'>?</font>: matching any ONE character<br /><font color='#FB6967'>[a-z123]</font>: matching any character in range `a-z` or `1-3`.",
+                "There are so many options in `find`. I cannot cover them all. However, you can learn more through `man find`."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "free",
+            "summary": "Display memory information.",
+            "examples": [
+                {
+                    "code": "$ free -h\ntotal        used        free      shared  buff/cache   available\nMem:           1.9G        443M        1.1G         10M        422M        1.3G\nSwap:          4.0G        321M        3.7G",
+                    "description": "Display memory information in a Human-readable way."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "ftp",
+            "summary": "Launch interactive console to establish a FTP (File Transfer Protocol) connection.",
+            "examples": [
+                {
+                    "code": "$ ftp",
+                    "description": "Launch FTP interactive console."
+                },
+                {
+                    "code": "$ ftp\nftp> open remote-server.com",
+                    "description": "Establish FTP connection to `remote-server.com` using default port `21`. After issuing this command, you will receive a prompt asking for username and password to connect to the FTP server."
+                },
+                {
+                    "code": "$ ftp\nftp> open remote-server.com 12000",
+                    "description": "Establish FTP connection to `remote-server.com` using custom port `12000`. After issuing this command, you will receive a prompt asking for username and password to connect to the FTP server."
+                },
+                {
+                    "code": "ftp> !ls",
+                    "description": "Execute command `ls` in your shell rather than in FTP client shell."
+                },
+                {
+                    "code": "ftp> ls",
+                    "description": "LiSt all files in the remote server disk under current working directory."
+                },
+                {
+                    "code": "ftp> pwd",
+                    "description": "Print current Working Directory in the remote server."
+                },
+                {
+                    "code": "ftp> cd public_html",
+                    "description": "Navigate your current working directory to `./public_html` in FTP client shell."
+                },
+                {
+                    "code": "ftp> lcd dir1",
+                    "description": "Navigate your current working directory to `./dir1` in your shell."
+                },
+                {
+                    "code": "ftp> mkdir dir1",
+                    "description": "Create a new directory `dir1` in remote server."
+                },
+                {
+                    "code": "ftp> get doc.txt",
+                    "description": "Download `doc.txt` to your current working directory in your shell."
+                },
+                {
+                    "code": "ftp> get doc.txt doc2.txt",
+                    "description": "Download `doc.txt` to your current working directory in your shell and rename as `doc2.txt`."
+                },
+                {
+                    "code": "ftp> put doc.txt",
+                    "description": "Upload `doc.txt` from your disk to the current working directory in FTP server."
+                },
+                {
+                    "code": "ftp> put doc.txt dir1/doc.txt",
+                    "description": "Upload `doc.txt` from your disk to `./dir1/` in FTP server."
+                },
+                {
+                    "code": "ftp> mdelete doc.txt",
+                    "description": "Remove `doc.txt` in current working directory of FTP client shell. It will prompt you to confirm whether you really want to remove the file."
+                },
+                {
+                    "code": "ftp> mdelete doc.txt dir1/doc2.txt",
+                    "description": "Remove multiple files in remote server. It will prompt you to confirm whether you really want to remove each file."
+                },
+                {
+                    "code": "ftp> mdelete *.txt",
+                    "description": "Remove all files with extension \"txt\" under current working directory of the remote server. For each file, it will prompt you whether you really want to remove the file."
+                },
+                {
+                    "code": "ftp> rmdir dir1",
+                    "description": "Remove empty directory `./dir1` in FTP server. Note that if the `./dir1` is not empty, the removal operation will fail."
+                },
+                {
+                    "code": "ftp> bye",
+                    "description": "Close the current FTP connection and quit the FTP interactive console."
+                }
+            ],
+            "tips": [
+                "`ftp` program will not maintain connection if you do not issue any command in FTP client shell under 30 seconds. However, `lftp` which is the advanced version of `ftp` developed by Alexander V. Lukyanov will automatically reconnect. Therefore, consider using `lftp` instead.",
+                "`ftp` cannot remove folder recursively. You have to manually remove all files, subdirectories inside the folder in order to remove the target folder. However, `lftp` can do the job using solely one command, see `lftp`."
+            ],
+            "relatedCommands": [
+                "lftp"
+            ]
+        },
+        {
+            "name": "grep",
+            "summary": "Search keyword from file(s).",
+            "premise": [
+                {
+                    "paragraph": "Suppose in a.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello World\nrandom text 1\nrandom text 2\nrandom text 3\nrandom text 4\nrandom text 5\nrandom text 6\nrandom text 7\nrandom text 8\nrandom text 9\nrandom text 10\nrandom text 11\nrandom text 12\nrandom text 13\nthis is a random text 14.",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in b.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello Brother\nrandom text 1\nrandom text 11\nrandom text 12\nrandom text 21",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in ./dir1/c.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "This is me.\nHello my friend.",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ grep -Hn \"Hello\" a.txt b.txt\na.txt:1:Hello World\nb.txt:1:Hello Brother",
+                    "description": "Find keyword \"Hello\" in files `a.txt` and `b.txt`. The corresponding file name `-H` and line number `-n` will be outputed with the search result."
+                },
+                {
+                    "code": "$ grep -Hn \"hello\" a.txt b.txt",
+                    "description": "Find keyword \"hello\" in files `a.txt` and `b.txt` (exact case match)."
+                },
+                {
+                    "code": "$ grep -Hn -i \"hello\" a.txt b.txt\na.txt:1:Hello World\nb.txt:1:Hello Brother",
+                    "description": "Find keyword \"hello\" in files `a.txt` and `b.txt` (Ignore case match)."
+                },
+                {
+                    "code": "$ grep -Hn \"random text .\"\na.txt:2:random text 1\na.txt:3:random text 2\na.txt:4:random text 3\na.txt:5:random text 4\na.txt:6:random text 5\na.txt:7:random text 6\na.txt:8:random text 7\na.txt:9:random text 8\na.txt:10:random text 9\na.txt:11:random text 10\na.txt:12:random text 11\na.txt:13:random text 12\na.txt:14:random text 13\na.txt:15:this is a random text 14.\nb.txt:2:random text 1\nb.txt:3:random text 11\nb.txt:4:random text 12\nb.txt:5:random text 21",
+                    "description": "Find regex pattern \"random text .\" in files `a.txt` and `b.txt`. `.` will match any single character. The reason for matching \"random text 10\", \"random text 11\", \"random text 12\", \"random text 13\", \"this is a random text 14.\" and \"random text 21\" is because the pattern is part of their string."
+                },
+                {
+                    "code": "$ grep -Hn \"random text [1-9]\\+$\"\na.txt:2:random text 1\na.txt:3:random text 2\na.txt:4:random text 3\na.txt:5:random text 4\na.txt:6:random text 5\na.txt:7:random text 6\na.txt:8:random text 7\na.txt:9:random text 8\na.txt:10:random text 9\na.txt:12:random text 11\na.txt:13:random text 12\na.txt:14:random text 13\nb.txt:2:random text 1\nb.txt:3:random text 11\nb.txt:4:random text 12\nb.txt:5:random text 21",
+                    "description": "Find regex pattern \"random text [1-9]\\+$\" in files `a.txt` and `b.txt`. `[1-9]` will match any digit ranging [1, 9]; `[1-9]\\+` will match at least one digit ranging [1, 9]; `[1-9]\\+$` will match at least one digit ranging [1, 9] which must be at the end of the line. That is why \"this is a random text 14.\" is not in output because its last character is '.' which is not in range [1, 9]."
+                },
+                {
+                    "code": "$ grep -Hn -R \"Hello\" *\na.txt:1:Hello World\nb.txt:1:Hello Brother\ndir1/c.txt:2:Hello my friend.",
+                    "description": "Recursively find keyword \"Hello\" in all files under current working directory."
+                }
+            ],
+            "tips": [
+                "This is one of the most commonly-used commands so keep it in mind.",
+                "See `man grep` to learn more about regular expressions."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "gunzip",
+            "summary": "GNU UNZIP - decompress gzip archive with format `.tar.gz`.",
+            "examples": [
+                {
+                    "code": "gunzip result.tar.gz",
+                    "description": "decompress and replace the archive `result.tar.gz` into regular tarball `result.tar`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "gzip", "split", "tar", "unzip", "zip"
+            ]
+        },
+        {
+            "name": "gzip",
+            "summary": "GNU ZIP - compress tarball using Lempel-Ziv Coding.",
+            "examples": [
+                {
+                    "code": "$ gzip -v result.tar\nresult.tar:	 98.5% -- replaced with result.tar.gz",
+                    "description": "Compress the tarball `result.tar` and transform into `result.tar.gz`."
+                },
+                {
+                    "code": "$ gzip -t -v result.tar.gz\nresult.tar.gz:   OK",
+                    "description": "Test if the archive is corrupted or not."
+                },
+                {
+                    "code": "$ gzip -l result.tar.gz\ncompressed        uncompressed  ratio uncompressed_name\n185               10240         98.5% result.tar",
+                    "description": "Show the compression ratio of the archive `result.tar.gz`."
+                },
+                {
+                    "code": "$ gzip -9 -v result.tar\nresult.tar:	 98.5% -- replaced with result.tar.gz",
+                    "description": "Compress the tarball `result.tar` with the best (slowest) compression level and transform into `result.tar.gz`."
+                }
+            ],
+            "tips": [
+                "You can view the content in archive `*.tar.gz` easily by `vim &lt;archive&gt;.tar.gz`."
+            ],
+            "relatedCommands": [
+                "gunzip", "split", "tar", "unzip", "zip"
+            ]
+        },
+        {
+            "name": "head",
+            "summary": "Show the beginning of the file.",
+            "premise": [
+                {
+                    "paragraph": "Suppose in a.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello World\nrandom text 1\nrandom text 2\nrandom text 3\nrandom text 4\nrandom text 5\nrandom text 6\nthe quick brown fox is\njumping over the lazy dog.",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in b.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "more is less than less.\nless is more than more.\nrandom text 1\nrandom text 2\nrandom text 4\nrandom text 8\nrandom text 16\nrandom text 32\nThe end.",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ head -5 a.txt\nHello World\nrandom text 1\nrandom text 2\nrandom text 3\nrandom text 4",
+                    "description": "Show the first five lines of the file `a.txt`."
+                },
+                {
+                    "code": "$ head -5 a.txt b.txt\n==> a.txt <==\nHello World\nrandom text 1\nrandom text 2\nrandom text 3\nrandom text 4\n\n==> b.txt <==\nmore is less than less.\nless is more than more.\nrandom text 1\nrandom text 2\nrandom text 4",
+                    "description": "Show the first five lines of files `a.txt` and `b.txt`."
+                },
+                {
+                    "code": "ps aux | sort -k 3 -r | head -10",
+                    "description": "Show the top-10 processes that consume most of the CPU cycles."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "tail"
+            ]
+        },
+        {
+            "name": "hostname",
+            "summary": "Set/Get the network hostname of your computer.",
+            "examples": [
+                {
+                    "code": "hostname",
+                    "description": "Show the hostname of your computer."
+                },
+                {
+                    "code": "sudo hostname company001",
+                    "description": "Change the hostname to \"company001\"."
+                }
+            ],
+            "tips": [
+                "We need this `hostname` program to get the network hostname when we want to conduct a `ssh` session."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "id",
+            "summary": "Obtain IDentity of the calling process.",
+            "examples": [
+                {
+                    "code": "$ id\nuid=501(user) gid=20(staff) groups=20(staff),24(HR)",
+                    "description": "Obtain identity of the calling process. <font color='#FB6967'>uid</font> corresponds to user ID; <font color='#FB6967'>gid</font> corresponds to group ID; <font color='#FB6967'>groups</font> means the calling process belongs to multiple groups: \"staff\" with group ID 20 and \"HR\" with group ID 24."
+                },
+                {
+                    "code": "$ id -u\n501",
+                    "description": "Obtain the effective user ID of the calling process."
+                },
+                {
+                    "code": "$ id -g\n20",
+                    "description": "Obtain the effective group ID of the calling process."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "ifconfig",
+            "summary": "CONFIGure a network InterFace.",
+            "examples": [
+                {
+                    "code": "$ ifconfig\nens33     Link encap:Ethernet  HWaddr ae:ae:ae:ae:ae:ae  \ninet addr:192.168.0.171  Bcast:192.168.0.255  Mask:255.255.255.0\ninet6 addr: aeae::aeae:aeae:aeae:aeae/64 Scope:Link\nUP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1\nRX packets:3230 errors:0 dropped:0 overruns:0 frame:0\nTX packets:1865 errors:0 dropped:0 overruns:0 carrier:0\ncollisions:0 txqueuelen:1000 \nRX bytes:3838333 (3.8 MB)  TX bytes:166259 (166.2 KB)\n\nlo        Link encap:Local Loopback  \ninet addr:127.0.0.1  Mask:255.0.0.0\ninet6 addr: ::1/128 Scope:Host\nUP LOOPBACK RUNNING  MTU:65536  Metric:1\nRX packets:2994 errors:0 dropped:0 overruns:0 frame:0\nTX packets:2994 errors:0 dropped:0 overruns:0 carrier:0\ncollisions:0 txqueuelen:1000 \nRX bytes:695819 (695.8 KB)  TX bytes:695819 (695.8 KB)",
+                    "description": "Show all active network interfaces. In this example, `ens33` is the Ethernet interface. `HWaddr` means hardware address (MAC address); `inet addr` means host IPv4 address; `Bcast` means broadcast address; `Mask` means subnet mask; `inet6 addr` means IPv6 address. `lo` is the loopback device (aka localhost)."
+                },
+                {
+                    "code": "$ ifconfig -a",
+                    "description": "Show all network interfaces on your computer including the ones that are down."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "info",
+            "summary": "Read a more detailed documentation about a command.",
+            "premise": [
+                {
+                    "paragraph": "Assume\n  info>\nas the info console."
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ info ls",
+                    "description": "Read the full documentation about the command `ls`."
+                },
+                {
+                    "code": "$ info ls\ninfo> q",
+                    "description": "Quit the `info` reader."
+                },
+                {
+                    "code": "$ info ls\ninfo> ?",
+                    "description": "Show all key bindings about the `info` reader."
+                },
+                {
+                    "code": "$ info ls\ninfo> b",
+                    "description": "Go to the Beginning of the document."
+                },
+                {
+                    "code": "$ info ls\ninfo> e",
+                    "description": "Go to the End of the document."
+                },
+                {
+                    "code": "$ info ls\ninfo> <Space>",
+                    "description": "Scroll the reader to the next page."
+                },
+                {
+                    "code": "$ info ls\ninfo> <BackSpace>",
+                    "description": "Scroll the reader to the previous page."
+                },
+                {
+                    "code": "$ info ls\ninfo> n",
+                    "description": "Go to the Next node/section."
+                },
+                {
+                    "code": "$ info ls\ninfo> p",
+                    "description": "Go to the Previous node/section."
+                },
+                {
+                    "code": "$ info ls\ninfo> <Return>",
+                    "description": "Open the hyperlink under the cursor."
+                },
+                {
+                    "code": "$ info ls\ninfo> /-l",
+                    "description": "Search for \"-l\" in documentation."
+                },
+                {
+                    "code": "$ info ls\ninfo> <Ctrl-x> n",
+                    "description": "Repeat the previous search. Find the next match in the document."
+                },
+                {
+                    "code": "$ info ls\ninfo> <Ctrl-x> N",
+                    "description": "Repeat the previous search. Find the previous match in the document."
+                }
+            ],
+            "tips": [
+                "`info` provides a more detailed documentation than `man` so don't miss it."
+            ],
+            "relatedCommands": [
+                "man"
+            ]
+        },
+        {
+            "name": "kill",
+            "summary": "Send a signal to the process.",
+            "premise": [
+                {
+                    "paragraph": "Assume we have launched the Firefox browser.",
+                    "isCodeSnippet": false
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ ps aux | grep -i firefox\nuser        9319 53.7 11.6 2874428 235848 ?      Sl   01:49   0:05 /usr/lib/firefox/firefox\nuser        9363 19.0  7.3 2619248 148044 ?      Sl   01:49   0:01 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 9319 true tab\nuser        9406  9.1  5.3 2573464 108444 ?      Sl   01:49   0:00 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5942 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 9319 true tab\nuser        9445  5.6  3.8 2552920 77824 ?       Sl   01:49   0:00 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6728 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 9319 true tab\nuser        9471  0.0  0.0  14220  1080 pts/19   S+   01:49   0:00 grep -i firefox\n$ kill -15 9319",
+                    "description": "Terminate the Firefox browser process. If the process was not responding before sending the signal `-15`, it will wait for the operating system to terminate."
+                },
+                {
+                    "code": "$ kill -9 1234",
+                    "description": "Terminate the process with process id (pid) 1234. This will immediately kill process even if it is not responding and hanging. Use this method only when the process is not writing anything to the disk at that time. If it is writing and you send the signal `-9`, the file may corrupt."
+                }
+            ],
+            "tips": [
+                "See `man kill` for all signals that it can possibly emit."
+            ],
+            "relatedCommands": [
+                "ps"
+            ]
+        },
+        {
+            "name": "less",
+            "summary": "View a document through a pager.",
+            "premise": [
+                {
+                    "paragraph": "Assume\n  less>\nas the less console.",
+                    "isCodeSnippet": false
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ less doc.txt",
+                    "description": "View a document."
+                },
+                {
+                    "code": "$ less -N doc.txt",
+                    "description": "View a document with line Number embedded at the beginning of each line."
+                },
+                {
+                    "code": "$ less doc.txt\nless> :q",
+                    "description": "Quit the `less` reader."
+                },
+                {
+                    "code": "$ less doc.txt\nless> f",
+                    "description": "Scroll the `less` reader Forward one page."
+                },
+                {
+                    "code": "$ less doc.txt\nless> b",
+                    "description": "Scroll the `less` reader Backward one page."
+                },
+                {
+                    "code": "$ less doc.txt\nless> d",
+                    "description": "Scroll the `less` reader Down half of the page."
+                },
+                {
+                    "code": "$ less doc.txt\nless> u",
+                    "description": "Scroll the `less` reader Up half of the page."
+                },
+                {
+                    "code": "$ less doc.txt\nless> g",
+                    "description": "Scroll the `less` reader to the beginning of the document."
+                },
+                {
+                    "code": "$ less doc.txt\nless> G",
+                    "description": "Scroll the `less` reader to the end of the document."
+                },
+                {
+                    "code": "$ less doc.txt\nless> <Down-Arrow>",
+                    "description": "Scroll the `less` reader forward one line."
+                },
+                {
+                    "code": "$ less doc.txt\nless> <Up-Arrow>",
+                    "description": "Scroll the `less` reader backward one line."
+                },
+                {
+                    "code": "$ less doc.txt\nless> <Left-Arrow>",
+                    "description": "Scroll the page you are currently viewing to the left."
+                },
+                {
+                    "code": "$ less doc.txt\nless> <Right-Arrow>",
+                    "description": "Scroll the page you are currently viewing to the right."
+                },
+                {
+                    "code": "$ less doc.txt doc2.txt",
+                    "description": "Browse multiple documents."
+                },
+                {
+                    "code": "$ less doc.txt doc2.txt\nless> :n",
+                    "description": "View the Next file."
+                },
+                {
+                    "code": "$ less doc.txt doc2.txt\nless> :p",
+                    "description": "View the Previous file."
+                },
+                {
+                    "code": "$ less doc.txt doc2.txt\nless> :d",
+                    "description": "Close the file that you are currently viewing."
+                },
+                {
+                    "code": "$ less doc.txt doc2.txt\nless> =",
+                    "description": "Show the information about the file that you are currently viewing."
+                },
+                {
+                    "code": "$ less doc.txt\nless> :e doc2.txt",
+                    "description": "Examine a new file `doc2.txt` in `less` pager."
+                },
+                {
+                    "code": "$ less doc.txt\nless> !<cmd>",
+                    "description": "Execute shell command `&lt;cmd&gt;` invoked from `less` pager."
+                },
+                {
+                    "code": "$ less doc.txt\nless> /<pattern>",
+                    "description": "Forward search for regex pattern in the document."
+                },
+                {
+                    "code": "$ less doc.txt\nless> ?<pattern>",
+                    "description": "Backward search for regex pattern in the document."
+                },
+                {
+                    "code": "$ less doc.txt\nless> n",
+                    "description": "Repeat the previous search. Find the next match in the document."
+                },
+                {
+                    "code": "$ less doc.txt\nless> N",
+                    "description": "Repeat the previous search. Find the previous match in the document."
+                }
+            ],
+            "tips": [
+                "You should use `less` instead of `more` which both are a document viewer since it provides more functionalities such as backward paging."
+            ],
+            "relatedCommands": [
+                "more"
+            ]
+        },
+        {
+            "name": "ln",
+            "summary": "LiNk - Create shortcut to a file/directory.",
+            "premise": [
+                {
+                    "paragraph": "Assume the directory structure to be",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": ".:\ntotal 12\n-rw-rw-r-- 1 user   53 Jul 28 13:20 a.txt\n-rw-rw-r-- 1 user   33 Jul 28 13:19 c.txt\ndrwxrwxr-x 2 user 4096 Jul 28 13:24 dir1/\n\n./dir1:\ntotal 0",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in a.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello World\nI eat apples.\nApples hate me.\nThe end.",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in c.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Good morning doctor.\nI am Scott.",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ ln a.txt dir1/b.txt\n$ cat a.txt\nHello World\nI eat apples.\nApples hate me.\nThe end.\n$ cat dir1/b.txt\nHello World\nI eat apples.\nApples hate me.\nThe end.\n$ ls -l -R\n.:\ntotal 12\n-rw-rw-r-- 2 user   51 Jul 28 13:25 a.txt\n-rw-rw-r-- 1 user   33 Jul 28 13:19 c.txt\ndrwxrwxr-x 2 user 4096 Jul 28 13:30 dir1/\n\n./dir1:\ntotal 4\n-rw-rw-r-- 2 user 51 Jul 28 13:25 b.txt",
+                    "description": "Create a new hard link dir1/b.txt linking to the file `a.txt`. Notice that the second field of `a.txt` and `dir1/b.txt` changes to 2 in `ls -l -R` since it represents number of hard links attached to the file."
+                },
+                {
+                    "code": "$ cd dir1\n$ ln -s ../a.txt b.txt\n$ cd ..\n$ cat a.txt\nHello World\nI eat apples.\nApples hate me.\nThe end.\n$ cat dir1/b.txt\nHello World\nI eat apples.\nApples hate me.\nThe end.\n$ ls -l -R\n.:total 12\n-rw-rw-r-- 1 user   51 Jul 28 13:25 a.txt\n-rw-rw-r-- 1 user   33 Jul 28 13:19 c.txt\ndrwxrwxr-x 2 user 4096 Jul 28 13:35 dir1/\n\n./dir1:\ntotal 0\nlrwxrwxrwx 1 user 5 Jul 28 13:35 b.txt -> ../a.txt",
+                    "description": "Create a new soft link dir1/b.txt linking to the file `a.txt`. The `l` at the beginning of the file `dir1/b.txt` in `ls -l -R` represents a soft link."
+                },
+                {
+                    "code": "$ ln -s dir1 dir2\n$ ls -l -R\n.:\ntotal 12\n-rw-rw-r-- 1 user   51 Jul 28 14:00 a.txt\n-rw-rw-r-- 1 user   33 Jul 28 13:19 c.txt\ndrwxrwxr-x 2 user 4096 Jul 28 14:00 dir1/\nlrwxrwxrwx 1 user    4 Jul 28 14:00 dir2 -> dir1\n\n./dir1:\ntotal 0",
+                    "description": "Create a new soft link `dir2` linking to the directory `dir1`. The `l` at the beginning of the directory `dir2` in `ls -l -R` represents a soft link. Note that you cannot create a hard link on directory."
+                }
+            ],
+            "tips": [
+                "If the file content is modified, the soft/hard link file content will also be changed.",
+                "Difference between hard link and soft link:<br /><font color='#FB6967'>Hard Link:</font><br />- If the file is moved or renamed, the hard link can still point to that file and view its content.<br />- If the file is deleted, the hard link will still have its original content.<br />- Size of the hard link is the same as the original file.<br />- It is not possible to create a hard link on directory.<br /><font color='#FB6967'>Soft Link:</font><br />- If the file is moved / renamed / deleted, the shortcut will no longer work.<br />- Size of the soft link is significantly smaller than the original file since it is merely a pointer pointing to the original file inode.<br />- It is possible to create a soft link on directory."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "logout",
+            "summary": "Log out the terminal.",
+            "examples": [
+                {
+                    "code": "logout",
+                    "description": "Log out the terminal."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "ls",
+            "summary": "LiSt directory content.",
+            "premise": [
+                {
+                    "paragraph": "Assume the directory structure to be",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": ".\n├── a.txt\n├── b.txt\n├── c.txt\n├── dir1\n│   ├── abc.txt\n│   ├── a.zip\n│   ├── dir11\n│   │   ├── a.tar\n│   │   ├── b.tar\n│   │   └── c.tar\n│   └── d.txt\n├── dir2\n│   └── z.txt\n└── .secret",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ ls\na.txt  b.txt  c.txt  dir1/  dir2/",
+                    "description": "LiSt all (non-hidden) files and directories in current working directory."
+                },
+                {
+                    "code": "$ ls dir1\nabc.txt  a.zip	dir11/	d.txt",
+                    "description": "LiSt all (non-hidden) files in directories in directory `./dir1`."
+                },
+                {
+                    "code": "$ ls -l\ntotal 8\n-rw-rw-r-- 1 user    0 Jul 28 14:22 a.txt\n-rw-rw-r-- 1 user    0 Jul 28 14:22 b.txt\n-rw-rw-r-- 1 user    0 Jul 28 14:22 c.txt\ndrwxrwxr-x 3 user 4096 Jul 28 14:22 dir1/\ndrwxrwxr-x 2 user 4096 Jul 28 14:22 dir2/",
+                    "description": "LiSt all (non-hidden) files and directories in a more detailed way under current working directory."
+                },
+                {
+                    "code": "$ ls -la\ntotal 16\ndrwxrwxr-x  4 user 4096 Jul 28 14:31 ./\ndrwxrwxr-x 12 user 4096 Jul 28 14:21 ../\n-rw-rw-r--  1 user    0 Jul 28 14:22 a.txt\n-rw-rw-r--  1 user    0 Jul 28 14:22 b.txt\n-rw-rw-r--  1 user    0 Jul 28 14:22 c.txt\ndrwxrwxr-x  3 user 4096 Jul 28 14:22 dir1/\ndrwxrwxr-x  2 user 4096 Jul 28 14:22 dir2/\n-rw-rw-r--  1 user    0 Jul 28 14:31 .secret",
+                    "description": "LiSt all files and directories (including hidden ones) in a more detailed way under current working directory."
+                },
+                {
+                    "code": "$ ls -la -R\n.:\ntotal 16\ndrwxrwxr-x  4 user 4096 Jul 28 14:31 ./\ndrwxrwxr-x 12 user 4096 Jul 28 14:21 ../\n-rw-rw-r--  1 user    0 Jul 28 14:22 a.txt\n-rw-rw-r--  1 user    0 Jul 28 14:22 b.txt\n-rw-rw-r--  1 user    0 Jul 28 14:22 c.txt\ndrwxrwxr-x  3 user 4096 Jul 28 14:22 dir1/\ndrwxrwxr-x  2 user 4096 Jul 28 14:22 dir2/\n-rw-rw-r--  1 user    0 Jul 28 14:31 .secret\n\n./dir1:\ntotal 12\ndrwxrwxr-x 3 user 4096 Jul 28 14:22 ./\ndrwxrwxr-x 4 user 4096 Jul 28 14:31 ../\n-rw-rw-r-- 1 user    0 Jul 28 14:22 abc.txt\n-rw-rw-r-- 1 user    0 Jul 28 14:22 a.zip\ndrwxrwxr-x 2 user 4096 Jul 28 14:28 dir11/\n-rw-rw-r-- 1 user    0 Jul 28 14:22 d.txt\n\n./dir1/dir11:\ntotal 8\ndrwxrwxr-x 2 user 4096 Jul 28 14:28 ./\ndrwxrwxr-x 3 user 4096 Jul 28 14:22 ../\n-rw-rw-r-- 1 user    0 Jul 28 14:28 a.tar\n-rw-rw-r-- 1 user    0 Jul 28 14:28 b.tar\n-rw-rw-r-- 1 user    0 Jul 28 14:28 c.tar\n\n./dir2:\ntotal 8\ndrwxrwxr-x 2 user 4096 Jul 28 14:22 ./\ndrwxrwxr-x 4 user 4096 Jul 28 14:31 ../\n-rw-rw-r-- 1 user    0 Jul 28 14:22 z.txt",
+                    "description": "LiSt all files and directories Recursively under current working directory."
+                },
+                {
+                    "code": "$ ls -l -S\ntotal 8\ndrwxrwxr-x 3 user 4096 Jul 28 14:22 dir1/\ndrwxrwxr-x 2 user 4096 Jul 28 14:22 dir2/\n-rw-rw-r-- 1 user    0 Jul 28 14:22 a.txt\n-rw-rw-r-- 1 user    0 Jul 28 14:22 b.txt\n-rw-rw-r-- 1 user    0 Jul 28 14:22 c.txt",
+                    "description": "LiSt all (non-hidden) files and directories in current working directory and Sort them by size in descending order."
+                },
+                {
+                    "code": "$ ls -l -S -r\ntotal 8\n-rw-rw-r-- 1 user    0 Jul 28 14:22 c.txt\n-rw-rw-r-- 1 user    0 Jul 28 14:22 b.txt\n-rw-rw-r-- 1 user    0 Jul 28 14:22 a.txt\ndrwxrwxr-x 2 user 4096 Jul 28 14:22 dir2/\ndrwxrwxr-x 3 user 4096 Jul 28 14:22 dir1/",
+                    "description": "LiSt all (non-hidden) files and directories in current working directory and Sort them by size in ascending order."
+                }
+            ],
+            "tips": [
+                "This is one of the most commonly-used command in daily life so keep it in mind.",
+                "For each line in `ls -l`, for example<br />`-rw-rw-r--  1 user    0 Jul 28 14:22 a.txt`<br />The first letter of the line `-` means it is a regular file. `rw-rw-r--` is the file permission of the file owner, file owner's group and outsiders who does not belong to the owner's group. `1` is the number of hard links of the file `a.txt`. `user` is the file owner's name. `0` is the file size in bytes. `Jul 28 14:22` is the last modification time of the file. `a.txt` is the filename. For more information, check `info ls`."
+            ],
+            "relatedCommands": [
+                "find"
+            ]
+        },
+        {
+            "name": "man",
+            "summary": "View offline help MANual about a command.",
+            "examples": [
+                {
+                    "code": "man ls",
+                    "description": "View the MANual about the command `ls`."
+                },
+                {
+                    "code": "man 1 ls",
+                    "description": "View the section 1 of the MANual about the command `ls`."
+                }
+            ],
+            "tips": [
+                "Manual pages can help you a lot and teach you how to use the command properly."
+            ],
+            "relatedCommands": [
+                "info"
+            ]
+        },
+        {
+            "name": "mkdir",
+            "summary": "MaKe DIRectory - Create a new directory.",
+            "examples": [
+                {
+                    "code": "mkdir dir1",
+                    "description": "Create a new directory `dir1` under current working directory."
+                },
+                {
+                    "code": "mkdir Desktop/dir1",
+                    "description": "Create a new directory `dir1` in `./Desktop/`. If the `Desktop` folder already exists, `dir1` will be created in `./Desktop`."
+                },
+                {
+                    "code": "mkdir -p src/main/java/my_package",
+                    "description": "Recursively create subdirectory."
+                }
+            ],
+            "tips": [
+                "This is one of the most commonly-used command so keep it in mind."
+            ],
+            "relatedCommands": [
+                "cd", "pwd"
+            ]
+        },
+        {
+            "name": "more",
+            "summary": "View document through a pager.",
+            "examples": [
+                {
+                    "code": "more doc.txt",
+                    "description": "View document `doc.txt`."
+                }
+            ],
+            "tips": [
+                "You should use `less` instead of `more` which both are a document viewer since it provides more functionalities such as backward paging."
+            ],
+            "relatedCommands": [
+                "less"
+            ]
+        },
+        {
+            "name": "mount",
+            "summary": "MOUNT a device (e.g. USB, hard disk) to a directory (aka mount point).",
+            "examples": [
+                {
+                    "code": "mount",
+                    "description": "Display all mount points."
+                },
+                {
+                    "code": "sudo mount /dev/sdb1 /media/user/usb",
+                    "description": "mount the device `/dev/sdb1` to the mount point `/media/user/usb`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "umount"
+            ]
+        },
+        {
+            "name": "mv",
+            "summary": "MoVe and rename file/directory.",
+            "examples": [
+                {
+                    "code": "mv doc.txt doc2.txt",
+                    "description": "Rename document `doc.txt` as `doc2.txt`."
+                },
+                {
+                    "code": "mv dir1/doc.txt .",
+                    "description": "MoVe document `doc.txt` in `./dir1` to current working directory. If the `doc.txt` already exists in current working directory, it will be overwritten."
+                },
+                {
+                    "code": "mv doc.txt dir1/",
+                    "description": "MoVe document `doc.txt` in current working directory to `./dir1`. If the `doc.txt` already exists in `./dir1`, it will be overwritten."
+                },
+                {
+                    "code": "mv dir1/* dir2/",
+                    "description": "MoVe everything in `./dir1` to `./dir2`. If any file already exists in `./dir2`, it will be overwritten."
+                },
+                {
+                    "code": "mv -i *.txt dir1/",
+                    "description": "MoVe all files with extension \"txt\" under current working directory to `./dir1`. If any file already exists in `./dir1`, it will prompt you whether you want to overwrite the file or not. Answer 'y' to confirm to overwrite; answer 'n' to refuse to overwrite."
+                },
+                {
+                    "code": "yes n | mv -i *.txt dir1/",
+                    "description": "MoVe all files with extension \"txt\" under current working directory to `./dir1` without overwritting any file in `./dir1`."
+                }
+            ],
+            "tips": [
+                "This is one of the most commonly-used command so keep it in mind."
+            ],
+            "relatedCommands": [
+                "cp", "rm"
+            ]
+        },
+        {
+            "name": "netstat",
+            "summary": "Show NETwork STATus.",
+            "examples": [
+                {
+                    "code": "netstat",
+                    "description": "Display NETwork STATus for all active connections."
+                },
+                {
+                    "code": "netstat -p tcp",
+                    "description": "Display NETwork STATus for TCP sockets."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "ping", "traceroute"
+            ]
+        },
+        {
+            "name": "nice",
+            "summary": "Start a program with specific niceness.",
+            "examples": [
+                {
+                    "code": "sudo nice -n -10 <command> [ <arg1> <arg2> ... ]",
+                    "description": "Run the `&lt;command&gt;` with niceness `-10`."
+                }
+            ],
+            "tips": [
+                "Niceness of a process represents the scheduling priority. It ranges [-20, 19]. The <b>lower</b> the niceness value is, the <b>higher</b> the priority that the process is. The higher the priority, the more frequent the process will run. The operating system will allocate more CPU cycles to the process. `-20` is the highest priority."
+            ],
+            "relatedCommands": [
+                "ps", "renice"
+            ]
+        },
+        {
+            "name": "nslookup",
+            "summary": "Issue a DNS query to search for the IPv4 address of the Internet server.",
+            "examples": [
+                {
+                    "code": "$ nslookup www.google.com\nNon-authoritative answer:\nName:	www.google.com\nAddress: 216.58.200.4",
+                    "description": "Issue a DNS query to look for the IPv4 address of internet host `www.google.com`. Try to enter the address to the address bar in any browser. You should be redirected to `www.google.com`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "passwd",
+            "summary": "Modify/Set the PASSWorD of the user.",
+            "examples": [
+                {
+                    "code": "$ sudo passwd user",
+                    "description": "Change the PASSWorD of the `user`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "useradd"
+            ]
+        },
+        {
+            "name": "ping",
+            "summary": "Diagnose network connection.",
+            "examples": [
+                {
+                    "code": "ping www.google.com",
+                    "description": "Test if our computer is able to connect to the host `www.google.com` or not."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "netstat", "traceroute"
+            ]
+        },
+        {
+            "name": "ps",
+            "summary": "Display Process Status.",
+            "examples": [
+                {
+                    "code": "$ ps aux\nUSER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\nroot          1  0.0  0.2 185392  5916 ?        Ss   15:46   0:02 /sbin/init auto noprompt\nroot          2  0.0  0.0      0     0 ?        S    15:46   0:00 [kthreadd]\nroot          4  0.0  0.0      0     0 ?        S<   15:46   0:00 [kworker/0:0H]\nroot          6  0.0  0.0      0     0 ?        S    15:46   0:00 [ksoftirqd/0]\n...",
+                    "description": "Show all processes' status."
+                },
+                {
+                    "code": "$ ps aux | grep -i firefox\nuser       10146 51.2 11.3 2874960 230636 ?      Sl   21:50   0:05 /usr/lib/firefox/firefox\nuser       10195 19.0  7.2 2617976 147188 ?      Sl   21:50   0:01 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\nuser       10235  8.8  5.3 2573736 108416 ?      Sl   21:50   0:00 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5942 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\nuser       10278  6.6  3.8 2552932 78012 ?       Sl   21:50   0:00 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6728 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\nuser       10311  0.0  0.0  14220   940 pts/17   R+   21:50   0:00 grep -i firefox\n$ ps aux | head -1\nUSER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+                    "description": "Obtain the `firefox` process information such as `pid`, `CPU usage` and `memory usage`."
+                },
+                {
+                    "code": "$ ps aux | sort -k 3 -n -r\nuser       10146  1.4 11.5 2879600 233956 ?      Sl   21:50   0:06 /usr/lib/firefox/firefox\nuser        2399  0.6  6.9 1437060 141548 ?      Ssl  15:47   2:14 compiz\nroot       1047  0.5  4.6 480996 93668 tty7     Ssl+ 15:46   2:02 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch\nuser       10195  0.4  6.9 2616952 140104 ?      Sl   21:50   0:01 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\nuser        2754  0.2  1.9 663068 40128 ?        Sl   15:47   0:50 /usr/lib/gnome-terminal/gnome-terminal-server\nuser        2270  0.1  0.4 348092  9768 ?        Ssl  15:46   0:28 /usr/bin/ibus-daemon --daemonize --xim --address unix:tmpdir=/tmp/ibus\nuser       10235  0.1  5.1 2573736 104392 ?      Sl   21:50   0:00 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5942 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\nwhoopsie   1733  0.0  0.7 382184 14428 ?        Ssl  15:46   0:00 /usr/bin/whoopsie -f\nUSER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\nsystemd+    436  0.0  0.1 102380  2552 ?        Ssl  15:46   0:00 /lib/systemd/systemd-timesyncd\n...\n$ ps aux | head -1\nUSER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+                    "description": "Show all processes sorted by the third field, `CPU usage`, in descending order."
+                },
+                {
+                    "code": "$ ps aux | sort -k 3 -n -r | head -10\nuser       10146  1.4 11.5 2879600 233956 ?      Sl   21:50   0:06 /usr/lib/firefox/firefox\nuser        2399  0.6  6.9 1437060 141548 ?      Ssl  15:47   2:14 compiz\nroot       1047  0.5  4.6 480996 93668 tty7     Ssl+ 15:46   2:02 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch\nuser       10195  0.4  6.9 2616952 140104 ?      Sl   21:50   0:01 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\nuser        2754  0.2  1.9 663068 40128 ?        Sl   15:47   0:50 /usr/lib/gnome-terminal/gnome-terminal-server\nuser        2270  0.1  0.4 348092  9768 ?        Ssl  15:46   0:28 /usr/bin/ibus-daemon --daemonize --xim --address unix:tmpdir=/tmp/ibus\nuser       10235  0.1  5.1 2573736 104392 ?      Sl   21:50   0:00 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5942 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\nwhoopsie   1733  0.0  0.7 382184 14428 ?        Ssl  15:46   0:00 /usr/bin/whoopsie -f\nUSER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\nsystemd+    436  0.0  0.1 102380  2552 ?        Ssl  15:46   0:00 /lib/systemd/systemd-timesyncd\n$ ps aux | head -1\nUSER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+                    "description": "Show top-ten processes sorted by the third field, `CPU usage`, in descending order."
+                },
+                {
+                    "code": "$ ps -eo pid,nice,command\nPID  NI COMMAND\n1   0 /sbin/init auto noprompt\n2   0 [kthreadd]\n4 -20 [kworker/0:0H]\n6   0 [ksoftirqd/0]\n7   0 [rcu_sched]\n...",
+                    "description": "Show all processes with custom columns: process id (pid), niceness (nice) and command."
+                }
+            ],
+            "tips": [
+                "To learn more about the column headers, see `man ps`."
+            ],
+            "relatedCommands": [
+                "top"
+            ]
+        },
+        {
+            "name": "pwd",
+            "summary": "Print current Working Directory.",
+            "examples": [
+                {
+                    "code": "$ pwd\n/home/user/Desktop",
+                    "description": "Print current Working Directory."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "cd"
+            ]
+        },
+        {
+            "name": "renice",
+            "summary": "REset the NICEness of the process.",
+            "examples": [
+                {
+                    "code": "$ ps -eo pid,nice,command | grep firefox\n10146   0 /usr/lib/firefox/firefox\n10195   0 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\n10235   0 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5942 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\n10278   0 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6728 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\n10590   0 grep firefox\n$ sudo renice -10 -p 10146\n10146 (process ID) old priority 0, new priority -10\n$ ps -eo pid,nice,command | grep firefox\n10146 -10 /usr/lib/firefox/firefox\n10195   0 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\n10235   0 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5942 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\n10278   0 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6728 -prefMapSize 184375 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 10146 true tab\n10602   0 grep firefox",
+                    "description": "REset the NICEness of the firefox process to `-10`."
+                }
+            ],
+            "tips": [
+                "If you do not know what `niceness` is, check `nice`."
+            ],
+            "relatedCommands": [
+                "nice"
+            ]
+        },
+        {
+            "name": "rm",
+            "summary": "ReMove a file/directory.",
+            "examples": [
+                {
+                    "code": "rm doc.txt",
+                    "description": "ReMove a file `doc.txt` from current working directory."
+                },
+                {
+                    "code": "rm -i doc.txt",
+                    "description": "Prompt you whether you really want to ReMove the file `doc.txt`. Answer 'y' to confirm removal; answer 'n' to refuse removal."
+                },
+                {
+                    "code": "rm -R dir1",
+                    "description": "ReMove the entire directory `./dir1` Recursively."
+                },
+                {
+                    "code": "rm *.txt",
+                    "description": "ReMove all files with extension \"txt\" under current working directory."
+                },
+                {
+                    "code": "yes | rm -R .git",
+                    "description": "ReMove the Git repository. It will automatically answer 'y' for the removal of hash files."
+                }
+            ],
+            "tips": [
+                "<b>Beware</b> that after you issue `rm` command, the file removed will not go to the recycle bin. It will be <b>permanently</b> detached from the filesystem. Therefore, be extremely careful. If you want some guard to prevent you from accidental removing any file, add<br />`alias rm=\"rm -i\"`<br /> to the `~/.bashrc` config file."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "scp",
+            "summary": "Secure CoPy from one host to another network host.",
+            "examples": [
+                {
+                    "code": "scp <username>@<hostname>:/path/of/remote/file.txt .",
+                    "description": "Secure CoPy the file `/path/of/remote/file.txt` from the host `&lt;username&gt;@&lt;hostname&gt;` to local machine. Note that `&lt;username&gt;` should be your home folder's name `basename ~`; `&lt;hostname&gt;` can be found through `hostname` command. Password of the network host may be prompted to enter in order to authenticate."
+                },
+                {
+                    "code": "scp doc.txt <username>@<hostname>:/path/to/paste/",
+                    "description": "Secure CoPy the file `doc.txt` from local machine to network host `&lt;username&gt;@&lt;hostname&gt;`. Password of the network host may be prompted to enter in order to authenticate."
+                },
+                {
+                    "code": "scp -P 12000 doc.txt <username>@<hostname>:/path/to/paste/",
+                    "description": "Secure CoPy the file `doc.txt` from local machine to network host `&lt;username&gt;@&lt;hostname&gt;` using custom port `12000` instead of default `22`. Password of the network host may be prompted to enter in order to authenticate."
+                },
+                {
+                    "code": "scp -r dir1 <username>@<hostname>:/path/to/paste/",
+                    "description": "Secure CoPy the directory `./dir1` Recursively from local machine to network host `&lt;username&gt;@&lt;hostname&gt;`. Password of the network host may be prompted to enter in order to authenticate."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "ssh"
+            ]
+        },
+        {
+            "name": "sed",
+            "summary": "Stream EDitor - text processing tool.",
+            "premise": [
+                {
+                    "paragraph": "Suppose in a.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ sed \"s/apples/pears/\" a.txt\nHello World\nI eat pinepears and apples.\nApples hate me.\nThe end.\n$ cat a.txt\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "description": "Find keyword \"apples\" in each line and Substitute with \"pears\" on the first match only. Notice that the file `a.txt` is not overwritten by `sed`."
+                },
+                {
+                    "code": "$ sed -i \"s/apples/pears/\" a.txt\n$ cat a.txt\nHello World\nI eat pinepears and apples.\nApples hate me.\nThe end.",
+                    "description": "Find keyword \"apples\" in each line and Substitute with \"pears\" on the first match only. Comparing with the first example, the file `a.txt` is now overwritten by `sed` because of `-i` (edit file In-place)."
+                },
+                {
+                    "code": "$ sed \"s/apples/pears/g\" a.txt\nHello World\nI eat pinepears and pears.\nApples hate me.\nThe end.\n$ cat a.txt\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "description": "Find keyword \"apples\" in each line and Substitute them all with \"pears\"."
+                },
+                {
+                    "code": "$ sed \"s/apples/pears/i\" a.txt\nHello World\nI eat pinepears and apples.\npears hate me.\nThe end.\n$ cat a.txt\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "description": "Find keyword \"apples\" in each line (Ignore case search) and Substitute with \"pears\" on the first match only."
+                },
+                {
+                    "code": "$ sed \"s/apples/pears/gi\" a.txt\nHello World\nI eat pinepears and pears.\npears hate me.\nThe end.\n$ cat a.txt\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "description": "Find keyword \"apples\" in each line (Ignore case search) and Substitute all with \"pears\"."
+                },
+                {
+                    "code": "$ sed \"s/[aA]pples/pears/g\" a.txt\nHello World\nI eat pinepears and pears.\npears hate me.\nThe end.\n$ cat a.txt\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "description": "Find regex pattern \"[aA]pples\" in each line and Substitute all with \"pears\"."
+                },
+                {
+                    "code": "$ sed \"/[aA]pples/i# comment\" a.txt\nHello World\n# comment\nI eat pineapples and apples.\n# comment\nApples hate me.\nThe end.\n$ cat a.txt\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "description": "Find regex pattern \"[aA]pples\" in each line and Insert a new line \"# comment\" before the matched lines."
+                },
+                {
+                    "code": "$ sed \"[aA]pples/a# comment\" a.txt\nHello World\nI eat pineapples and apples.\n# comment\nApples hate me.\n# comment\nThe end.\n$ cat a.txt\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "description": "Find regex pattern \"[aA]pples\" in each line and Append a new line \"# comment\" after the matched lines."
+                },
+                {
+                    "code": "$ sed \"1iBy lcnssamlcn\" a.txt\nBy lcnssamlcn\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.\n$ cat a.txt\nHello World\nI eat pineapples and apples.\nApples hate me.\nThe end.",
+                    "description": "Insert \"By lcnssamlcn\" to the first line of the document `a.txt`."
+                }
+            ],
+            "tips": [
+                "The `sed` commands are very similar to `vim`'s such as the substitution command and regex syntax. If you have no trouble with `vim`, you should also have no problem using `sed`."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "shutdown",
+            "summary": "Power off or reboot the computer.",
+            "examples": [
+                {
+                    "code": "shutdown now",
+                    "description": "SHUT DOWN the computer right now."
+                },
+                {
+                    "code": "shutdown -r now",
+                    "description": "Reboot the computer right now."
+                },
+                {
+                    "code": "$ shutdown +1\nShutdown scheduled for Mon 2019-07-29 17:36:52 CST, use 'shutdown -c' to cancel.",
+                    "description": "SHUT DOWN the computer after 1 minute."
+                },
+                {
+                    "code": "$ shutdown -r +2\nShutdown scheduled for Mon 2019-07-29 17:36:52 CST, use 'shutdown -c' to cancel.",
+                    "description": "Reboot the computer after 2 minutes."
+                },
+                {
+                    "code": "shutdown -c",
+                    "description": "Cancel the scheduled shutdown/reboot."
+                },
+                {
+                    "code": "$ shutdown 17:45\nShutdown scheduled for Mon 2019-07-29 17:45:00 CST, use 'shutdown -c' to cancel.",
+                    "description": "SHUT DOWN the computer at 17:45 today."
+                },
+                {
+                    "code": "$ shutdown -r 17:45\nShutdown scheduled for Mon 2019-07-29 17:45:00 CST, use 'shutdown -c' to cancel.",
+                    "description": "Reboot the computer at 17:45 today."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "sort",
+            "summary": "Sort lines in order by some fields.",
+            "premise": [
+                {
+                    "paragraph": "Assume in alpha.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "John Doe\nAlbert Singh\nTony Quinn\nDan Poe\nFiona Mane\nSean McKenzie\nAmy Smith\nLester Murphy\nMark Johnson\nTim Anderson\nDavid Murphy\nCathy Winn\nCharles Rose\nElaine Klope\nOwen Johnson\nJohn Quinn\nTommy Wang\nIan Stewart\nJohnny Oliver\nDaniel Harrison",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in b.csv",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "John Doe,24,United States\nAlbert Singh,28,Canada\nTony Quinn,23,Canada\nDan Poe,24,China\nFiona Mane,25,France\nSean McKenzie,32,Italy\nAmy Smith,30,Japan\nLester Murphy,27,Saudi Arabia\nMark Johnson,32,United States\nTim Anderson,28,Sydney\nDavid Murphy,28,Germany\nCathy Winn,23,Canada\nCharles Rose,29,Sweden\nElaine Klope,31,United Kingdom\nOwen Johnson,29,Saudi Arabia\nJohn Quinn,35,Mexico\nTommy Wang,28,Greece\nIan Stewart,39,Canada\nJohnny Oliver,29,Hong Kong\nDaniel Harrison,33,Russia",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ sort -k 1,1 alpha.txt\nAlbert Singh\nAmy Smith\nCathy Winn\nCharles Rose\nDan Poe\nDaniel Harrison\nDavid Murphy\nElaine Klope\nFiona Mane\nIan Stewart\nJohn Doe\nJohn Quinn\nJohnny Oliver\nLester Murphy\nMark Johnson\nOwen Johnson\nSean McKenzie\nTim Anderson\nTommy Wang\nTony Quinn",
+                    "description": "Sort the first field alphabetically in ascending order, i.e. the word before ' ' such as \"John\", \"Albert\", \"Tony\", \"Dan\", ..."
+                },
+                {
+                    "code": "$ sort -k 2,2 alpha.txt\nTim Anderson\nJohn Doe\nDaniel Harrison\nMark Johnson\nOwen Johnson\nElaine Klope\nFiona Mane\nSean McKenzie\nDavid Murphy\nLester Murphy\nJohnny Oliver\nDan Poe\nJohn Quinn\nTony Quinn\nCharles Rose\nAlbert Singh\nAmy Smith\nIan Stewart\nTommy Wang\nCathy Winn",
+                    "description": "Sort the second field alphabetically in ascending order, i.e. the word after ' ' such as \"Doe\", \"Singh\", \"Quinn\", \"Poe\", ..."
+                },
+                {
+                    "code": "$ sort -k 1,2 alpha.txt\nAlbert Singh\nAmy Smith\nCathy Winn\nCharles Rose\nDaniel Harrison\nDan Poe\nDavid Murphy\nElaine Klope\nFiona Mane\nIan Stewart\nJohn Doe\nJohnny Oliver\nJohn Quinn\nLester Murphy\nMark Johnson\nOwen Johnson\nSean McKenzie\nTim Anderson\nTommy Wang\nTony Quinn",
+                    "description": "Sort the first field alphabetically then second field in ascending order. Comparing with the first example, notice the change of position of \"Dan Poe\" and \"Daniel Harrison\"."
+                },
+                {
+                    "code": "$ sort -k 1,1 -r alpha.txt\nTony Quinn\nTommy Wang\nTim Anderson\nSean McKenzie\nOwen Johnson\nMark Johnson\nLester Murphy\nJohnny Oliver\nJohn Quinn\nJohn Doe\nIan Stewart\nFiona Mane\nElaine Klope\nDavid Murphy\nDaniel Harrison\nDan Poe\nCharles Rose\nCathy Winn\nAmy Smith\nAlbert Singh",
+                    "description": "Sort the first field alphabetically in descending order."
+                },
+                {
+                    "code": "$ sort -t ',' -k 3,3 b.csv\nAlbert Singh,28,Canada\nCathy Winn,23,Canada\nIan Stewart,39,Canada\nTony Quinn,23,Canada\nDan Poe,24,China\nFiona Mane,25,France\nDavid Murphy,28,Germany\nTommy Wang,28,Greece\nJohnny Oliver,29,Hong Kong\nSean McKenzie,32,Italy\nAmy Smith,30,Japan\nJohn Quinn,35,Mexico\nDaniel Harrison,33,Russia\nLester Murphy,27,Saudi Arabia\nOwen Johnson,29,Saudi Arabia\nCharles Rose,29,Sweden\nTim Anderson,28,Sydney\nElaine Klope,31,United Kingdom\nJohn Doe,24,United States\nMark Johnson,32,United States",
+                    "description": "Sort the third field delimited by `,` alphabetically in ascending order."
+                },
+                {
+                    "code": "$ sort -t ',' -k 2,2 -n b.csv\nCathy Winn,23,Canada\nTony Quinn,23,Canada\nDan Poe,24,China\nJohn Doe,24,United States\nFiona Mane,25,France\nLester Murphy,27,Saudi Arabia\nAlbert Singh,28,Canada\nDavid Murphy,28,Germany\nTim Anderson,28,Sydney\nTommy Wang,28,Greece\nCharles Rose,29,Sweden\nJohnny Oliver,29,Hong Kong\nOwen Johnson,29,Saudi Arabia\nAmy Smith,30,Japan\nElaine Klope,31,United Kingdom\nMark Johnson,32,United States\nSean McKenzie,32,Italy\nDaniel Harrison,33,Russia\nJohn Quinn,35,Mexico\nIan Stewart,39,Canada",
+                    "description": "Sort the second field delimited by `,` Numerically in ascending order."
+                },
+                {
+                    "code": "$ ps aux | sort -k 3,3 -n -r | head -5\nuser        3010  5.2 10.9 2807916 222976 ?      Sl   18:33   0:04 /usr/lib/firefox/firefox\nuser        3059  2.1  7.1 2617260 145028 ?      Sl   18:33   0:01 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 184443 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3010 true tab\nuser        2267  1.1  6.8 1298076 139772 ?      Ssl  18:19   0:10 compiz\nuser        3130  0.9  5.1 2573724 104764 ?      Sl   18:33   0:00 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 5942 -prefMapSize 184443 -parentBuildID 20190718135155 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3010 true tab\nroot       1019  0.7  4.3 471824 87752 tty7     Ssl+ 18:19   0:06 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch\n$ ps aux | head -1\nUSER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+                    "description": "List top-5 processes that consume the most CPU usage."
+                },
+                {
+                    "code": "$ du -ah | sort -k 1,1 -h -r\n28K	.\n12K	./dir1\n4.0K	./dir3\n4.0K	./dir2\n4.0K	./dir1/z.txt\n4.0K	./dir1/dir11\n4.0K	./a.txt\n0	./dir3/t.txt\n0	./dir3/c.mp3\n0	./dir3/b.mp3\n0	./dir3/a.mp3\n0	./dir3/album.png\n0	./dir2/img9.png\n0	./dir2/img8.png\n0	./dir2/img7.png\n0	./dir2/img6.png\n0	./dir2/img5.png\n0	./dir2/img4.png\n0	./dir2/img3.png\n0	./dir2/img2.png\n0	./dir2/img1.png\n0	./dir2/img12.png\n0	./dir2/img11.png\n0	./dir2/img10.png\n0	./dir1/dir11/a.zip\n0	./dir1/dir11/a.txt\n0	./dir1/abc.txt\n0	./c.txt\n0	./b.txt\n0	./bcd.jar",
+                    "description": "Sort the first field by file size in descending order."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "source",
+            "summary": "Read and execute commands in the file.",
+            "examples": [
+                {
+                    "code": "source ~/.bashrc",
+                    "description": "Execute commands in `~/.bashrc` config file at current shell."
+                },
+                {
+                    "code": ". ~/.bashrc",
+                    "description": "Equivalent as the first example."
+                },
+                {
+                    "code": "source a.sh",
+                    "description": "Execute commands in `a.sh` at current shell. Note that `a.sh` does not need eXecute permission to run."
+                },
+                {
+                    "code": ". a.sh",
+                    "description": "Equivalent as the above example."
+                },
+                {
+                    "code": "./a.sh",
+                    "description": "Create a subshell to execute commands in `a.sh`. Note that `a.sh` does need eXecute permission to run."
+                }
+            ],
+            "tips": [
+                "See `man bash` and look for `source` to see the documentation."
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "split",
+            "summary": "SPLIT the file into pieces.",
+            "premise": [
+                {
+                    "paragraph": "$ du -h cfe-8.0.1.src.tar\n113M	cfe-8.0.1.src.tar",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ split -b 10M cfe-8.0.1.src.tar\n$ du -ah | sort -k 2,2\n226M .\n113M ./cfe-8.0.1.src.tar\n10M  ./xaa\n10M  ./xab\n10M  ./xac\n10M  ./xad\n10M  ./xae\n10M  ./xaf\n10M  ./xag\n10M  ./xah\n10M  ./xai\n10M  ./xaj\n10M  ./xak\n3.0M ./xal",
+                    "description": "SPLIT the tarball by 10 megabytes (10 * 1024 bytes) each. Each split file will be named as `&lt;prefix&gt;aa`, `&lt;prefix&gt;ab`, `&lt;prefix&gt;ac` and so on. The default `&lt;prefix&gt;` is 'x'."
+                },
+                {
+                    "code": "$ cat `ls x*` > a.tar",
+                    "description": "Merge the split files into a single tarball `a.tar` (following by the first example)."
+                },
+                {
+                    "code": "$ split -b 10M cfe-8.0.1.src.tar cfe_\n$ du -ah | sort -k 2,2\n226M .\n113M ./cfe-8.0.1.src.tar\n10M  ./cfe_aa\n10M  ./cfe_ab\n10M  ./cfe_ac\n10M  ./cfe_ad\n10M  ./cfe_ae\n10M  ./cfe_af\n10M  ./cfe_ag\n10M  ./cfe_ah\n10M  ./cfe_ai\n10M  ./cfe_aj\n10M  ./cfe_ak\n3.0M ./cfe_al",
+                    "description": "SPLIT the tarball by 10 megabytes (10 * 1024 bytes) each. It overrides the default prefix 'x' with \"cfe_\"."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "gunzip", "gzip", "tar", "unzip", "zip"
+            ]
+        },
+        {
+            "name": "ssh",
+            "summary": "Secure SHell",
+            "examples": [
+                {
+                    "code": "ssh user1@example.com",
+                    "description": "Remote log in the terminal as `user1` in organization `example.com`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "scp"
+            ]
+        },
+        {
+            "name": "sudo",
+            "summary": "SUperuser DO (execute) a command",
+            "examples": [
+                {
+                    "code": "sudo rm -R /",
+                    "description": "ReMove the entire Linux filesystem. Normally it cannot be done in normal user mode. Therefore, in order to do so, you must execute this command with superuser mode. <b>However, don't try this command by yourself. This is just an example saying why we sometimes need to execute a command as superuser.</b>"
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "tail",
+            "summary": "Show the end of the file(s).",
+            "premise": [
+                {
+                    "paragraph": "Suppose in a.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello World\nrandom text 1\nrandom text 2\nrandom text 3\nrandom text 4\nrandom text 5\nrandom text 6\nthe quick brown fox is\njumping over the lazy dog.",
+                    "isCodeSnippet": true
+                },
+                {
+                    "paragraph": "in b.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "more is less than less.\nless is more than more.\nrandom text 1\nrandom text 2\nrandom text 4\nrandom text 8\nrandom text 16\nrandom text 32\nThe end.",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ tail -5 a.txt\nrandom text 4\nrandom text 5\nrandom text 6\nthe quick brown fox is\njumping over the lazy dog.",
+                    "description": "Print the last five lines in `a.txt`."
+                },
+                {
+                    "code": "$ tail -n 5 a.txt b.txt\n==> a.txt <==\nrandom text 4\nrandom text 5\nrandom text 6\nthe quick brown fox is\njumping over the lazy dog.\n\n==> b.txt <==\nrandom text 4\nrandom text 8\nrandom text 16\nrandom text 32\nThe end.",
+                    "description": "Print the last five lines in `a.txt` and `b.txt`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "head"
+            ]
+        },
+        {
+            "name": "tar",
+            "summary": "Create / Extract / List contents in a Tape ARchive / TARball.",
+            "premise": [
+                {
+                    "paragraph": "Assume the folder structure to be",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": ".\n├── a.txt\n├── bcd.jar\n├── b.txt\n├── c.txt\n├── dir1\n│   ├── abc.txt\n│   ├── dir11\n│   │   ├── a.txt\n│   │   └── a.zip\n│   └── z.txt\n├── dir2\n│   ├── img10.png\n│   ├── img11.png\n│   ├── img12.png\n│   ├── img1.png\n│   ├── img2.png\n│   ├── img3.png\n│   ├── img4.png\n│   ├── img5.png\n│   ├── img6.png\n│   ├── img7.png\n│   ├── img8.png\n│   └── img9.png\n└── dir3\n    ├── album.png\n    ├── a.mp3\n    ├── b.mp3\n    ├── c.mp3\n    └── t.txt",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ tar cvf a.tar *\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/z.txt\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir2/\ndir2/img8.png\ndir2/img6.png\ndir2/img5.png\ndir2/img10.png\ndir2/img3.png\ndir2/img1.png\ndir2/img7.png\ndir2/img12.png\ndir2/img4.png\ndir2/img2.png\ndir2/img9.png\ndir2/img11.png\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "Group all files and directories under current working directory recursively into a single tarball `a.tar`. The output shows what files/directories have been archived."
+                },
+                {
+                    "code": "$ tar cvf a.tar a.txt b.txt dir1\na.txt\nb.txt\ndir1/\ndir1/z.txt\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt",
+                    "description": "Add `./a.txt`, `./b.txt` and all files and directories in `./dir1` into a single tarball `a.tar`. The output shows what files/directories have been archived."
+                },
+                {
+                    "code": "$ tar cvzf a.tar.gz *\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/z.txt\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir2/\ndir2/img8.png\ndir2/img6.png\ndir2/img5.png\ndir2/img10.png\ndir2/img3.png\ndir2/img1.png\ndir2/img7.png\ndir2/img12.png\ndir2/img4.png\ndir2/img2.png\ndir2/img9.png\ndir2/img11.png\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "Group all files and directories under current working directory recursively into a single archive using `gzip` compression method. The output shows what files/directories have been archived."
+                },
+                {
+                    "code": "$ tar --exclude=\"dir1/z.txt\" -cvf a.tar *\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir2/\ndir2/img8.png\ndir2/img6.png\ndir2/img5.png\ndir2/img10.png\ndir2/img3.png\ndir2/img1.png\ndir2/img7.png\ndir2/img12.png\ndir2/img4.png\ndir2/img2.png\ndir2/img9.png\ndir2/img11.png\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "Group all files and directories under current working directory recursively except `dir1/z.txt` into a single tarball `a.tar`. The output shows what files/directories have been archived."
+                },
+                {
+                    "code": "$ tar --exclude=\"dir1/z.txt\" --exclude=\"dir2\" -cvf a.tar *\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "Group all files and directories under current working directory recursively except `dir1/z.txt` and `dir2` into a single tarball `a.tar`. The output shows what files/directories have been archived."
+                },
+                {
+                    "code": "$ tar xvf a.tar\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/z.txt\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir2/\ndir2/img8.png\ndir2/img6.png\ndir2/img5.png\ndir2/img10.png\ndir2/img3.png\ndir2/img1.png\ndir2/img7.png\ndir2/img12.png\ndir2/img4.png\ndir2/img2.png\ndir2/img9.png\ndir2/img11.png\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "EXtract files from tarball `a.tar` to current working directory. The output shows which files/directories the tarball has extracted."
+                },
+                {
+                    "code": "$ mkdir -p new_dir && tar xvf a.tar -C new_dir\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/z.txt\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir2/\ndir2/img8.png\ndir2/img6.png\ndir2/img5.png\ndir2/img10.png\ndir2/img3.png\ndir2/img1.png\ndir2/img7.png\ndir2/img12.png\ndir2/img4.png\ndir2/img2.png\ndir2/img9.png\ndir2/img11.png\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "Create a directory `./new_dir` if it does not exist. Then, eXtract the tarball `a.tar` to the folder `./new_dir`. The output shows which files/directories the tarball has extracted."
+                },
+                {
+                    "code": "$ tar xvzf a.tar.gz\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/z.txt\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir2/\ndir2/img8.png\ndir2/img6.png\ndir2/img5.png\ndir2/img10.png\ndir2/img3.png\ndir2/img1.png\ndir2/img7.png\ndir2/img12.png\ndir2/img4.png\ndir2/img2.png\ndir2/img9.png\ndir2/img11.png\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "EXtract files from `gzip` archive `a.tar.gz` to current working directory. The output shows which files/directories the tarball has extracted."
+                },
+                {
+                    "code": "$ tar tf a.tar\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/z.txt\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir2/\ndir2/img8.png\ndir2/img6.png\ndir2/img5.png\ndir2/img10.png\ndir2/img3.png\ndir2/img1.png\ndir2/img7.png\ndir2/img12.png\ndir2/img4.png\ndir2/img2.png\ndir2/img9.png\ndir2/img11.png\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "LisT all files/directories archived in tarball `a.tar`."
+                },
+                {
+                    "code": "$ tar tf a.tar.gz\na.txt\nbcd.jar\nb.txt\nc.txt\ndir1/\ndir1/z.txt\ndir1/abc.txt\ndir1/dir11/\ndir1/dir11/a.zip\ndir1/dir11/a.txt\ndir2/\ndir2/img8.png\ndir2/img6.png\ndir2/img5.png\ndir2/img10.png\ndir2/img3.png\ndir2/img1.png\ndir2/img7.png\ndir2/img12.png\ndir2/img4.png\ndir2/img2.png\ndir2/img9.png\ndir2/img11.png\ndir3/\ndir3/t.txt\ndir3/b.mp3\ndir3/album.png\ndir3/c.mp3\ndir3/a.mp3",
+                    "description": "LisT all files/directories archived in tarball `a.tar.gz`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "gunzip", "gzip", "split", "unzip", "zip"
+            ]
+        },
+        {
+            "name": "top",
+            "summary": "Display process information periodically. It is like `ps` but `top` will constantly update process status and `ps` not.",
+            "premise": [
+                {
+                    "paragraph": "Assume\n  top>\nas the top console."
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ top -o cpu",
+                    "description": "Display process information every 1 second sorted by CPU usage in descending order."
+                },
+                {
+                    "code": "$ top -o mem",
+                    "description": "Display process information every 1 second sorted by memory usage in descending order."
+                },
+                {
+                    "code": "$ top -o cpu -s 5",
+                    "description": "Display process information every 5 seconds sorted by CPU usage in descending order."
+                },
+                {
+                    "code": "$ top\ntop> <Ctrl-l>",
+                    "description": "Refresh the screen immediately even if the update interval does not arrive."
+                },
+                {
+                    "code": "$ top\ntop> q",
+                    "description": "Quit the `top` program."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "ps"
+            ]
+        },
+        {
+            "name": "touch",
+            "summary": "Renew the timestamp of the file.",
+            "examples": [
+                {
+                    "code": "touch a.txt",
+                    "description": "Create an empty file if `a.txt` does not exist. Otherwise, renew the access time and modification time."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "traceroute",
+            "summary": "Print the routing table from local machine to a network host.",
+            "examples": [
+                {
+                    "code": "traceroute www.google.com",
+                    "description": "Print the routing table from local machine to network host `www.google.com`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "netstat", "ping"
+            ]
+        },
+        {
+            "name": "umount",
+            "summary": "UnMOUNT a device.",
+            "examples": [
+                {
+                    "code": "sudo umount /media/user/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                    "description": "Unmount the device mount point."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "mount"
+            ]
+        },
+        {
+            "name": "unalias",
+            "summary": "Remove alias from current shell.",
+            "examples": [
+                {
+                    "code": "unalias ll",
+                    "description": "Remove alias `ll` from your shell."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "uname",
+            "summary": "Print system information.",
+            "examples": [
+                {
+                    "code": "$ uname\nLinux",
+                    "description": "Print the kernel name of the operating system."
+                },
+                {
+                    "code": "$ uname -a\nLinux ubuntu 4.10.0-33-generic #37~16.04.1-Ubuntu SMP Fri Aug 11 14:07:24 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux",
+                    "description": "Print all system information."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "unzip",
+            "summary": "Decompress a ZIP archive.",
+            "examples": [
+                {
+                    "code": "$ unzip a.zip",
+                    "description": "Decompress the ZIP archive to current working directory."
+                },
+                {
+                    "code": "unzip a.zip -d dir1",
+                    "description": "Decompress the ZIP archive to `./dir1`. It is not necessary for the directory to exist before executing this command. It will be automatically created if not exists."
+                },
+                {
+                    "code": "$ unzip -tq a.zip\nNo errors detected in compressed data of a.zip.",
+                    "description": "Test if the archive `a.zip` is corrupted."
+                },
+                {
+                    "code": "$ unzip -l a.zip\nArchive:  a.zip\nLength      Date    Time    Name\n---------  ---------- -----   ----\n52  2019-07-30 22:43   a.txt\n0  2019-07-30 22:43   bcd.jar\n0  2019-07-30 22:43   b.txt\n0  2019-07-30 22:43   c.txt\n0  2019-07-30 22:43   dir1/\n0  2019-07-30 22:43   dir1/z.txt\n0  2019-07-30 22:43   dir1/abc.txt\n0  2019-07-30 22:43   dir1/dir11/\n0  2019-07-30 22:43   dir1/dir11/a.zip\n0  2019-07-30 22:43   dir1/dir11/a.txt\n0  2019-07-30 22:43   dir2/\n0  2019-07-30 22:43   dir2/img8.png\n0  2019-07-30 22:43   dir2/img6.png\n0  2019-07-30 22:43   dir2/img5.png\n0  2019-07-30 22:43   dir2/img10.png\n0  2019-07-30 22:43   dir2/img3.png\n0  2019-07-30 22:43   dir2/img1.png\n0  2019-07-30 22:43   dir2/img7.png\n0  2019-07-30 22:43   dir2/img12.png\n0  2019-07-30 22:43   dir2/img4.png\n0  2019-07-30 22:43   dir2/img2.png\n0  2019-07-30 22:43   dir2/img9.png\n0  2019-07-30 22:43   dir2/img11.png\n0  2019-07-30 22:43   dir3/\n0  2019-07-30 22:43   dir3/t.txt\n0  2019-07-30 22:43   dir3/b.mp3\n0  2019-07-30 22:43   dir3/album.png\n0  2019-07-30 22:43   dir3/c.mp3\n0  2019-07-30 22:43   dir3/a.mp3\n---------                     -------\n52                     29 files",
+                    "description": "List the contents in archive."
+                },
+                {
+                    "code": "unzip -p a.zip dir1/z.txt > abc.txt",
+                    "description": "Extract one file `dir1/z.txt` from the archive and save as `abc.txt`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "gunzip", "gzip", "tar", "unzip", "zip"
+            ]
+        },
+        {
+            "name": "useradd",
+            "summary": "Create a new USER in the operating system.",
+            "examples": [
+                {
+                    "code": "sudo useradd david",
+                    "description": "Create a new user named `david` with no password. It will be shown in the login screen."
+                },
+                {
+                    "code": "$ sudo useradd -m david\n$ sudo passwd david",
+                    "description": "Create a new user named `david` with password. A new home folder for `david` will be automatically generated by `-m`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "passwd", "userdel"
+            ]
+        },
+        {
+            "name": "userdel",
+            "summary": "DELete an existing USER in the operating system.",
+            "examples": [
+                {
+                    "code": "sudo userdel david",
+                    "description": "Remove the existing user named `david` in the operating system. `david`'s account no longer appears in the login screen. However, note that `david`'s home folder is not removed yet."
+                },
+                {
+                    "code": "sudo userdel -r david",
+                    "description": "Remove the existing user named `david` in the operating system. `david`'s account no longer appears in the login screen. In the meantime, `david`'s home folder will be removed."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "useradd"
+            ]
+        },
+        {
+            "name": "w",
+            "summary": "Show Who is currently login and What they are doing.",
+            "examples": [
+                {
+                    "code": "$ w\n20:25:05 up 14 min,  2 users,  load average: 2.68, 1.21, 0.56\nUSER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT\nuser1    tty8     :1               20:13   14:10   6.99s  0.18s /sbin/upstart -\nuser2    tty9     :2               20:24   14:10   2.98s  0.16s /sbin/upstart -",
+                    "description": "Show Who is currently login and What they are doing. For example, user `user1` logged in at `20:13` using `tty8` terminal. He has already logged in `14 minutes and 10 seconds`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "whoami"
+            ]
+        },
+        {
+            "name": "wc",
+            "summary": "Byte/Word/Line Count.",
+            "premise": [
+                {
+                    "paragraph": "Assume in a.txt",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": "Hello World\nI love hotdogs.",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ wc -l a.txt\n2 a.txt",
+                    "description": "Count how many lines `a.txt` have."
+                },
+                {
+                    "code": "$ wc -w a.txt\n5 a.txt",
+                    "description": "Count how many words `a.txt` have."
+                },
+                {
+                    "code": "$ ls -l\ntotal 28\n-rw-rw-r-- 1 lcn lcn 10240 Jul 29 22:43 a.tar\n-rw-r--r-- 1 lcn lcn    52 Jul 29 21:50 a.txt\n-rw-rw-r-- 1 lcn lcn     0 Jul 29 21:48 bcd.jar\n-rw-rw-r-- 1 lcn lcn     0 Jul 29 21:48 b.txt\n-rw-rw-r-- 1 lcn lcn     0 Jul 29 21:48 c.txt\ndrwxrwxr-x 3 lcn lcn  4096 Jul 29 22:09 dir1/\ndrwxrwxr-x 2 lcn lcn  4096 Jul 29 21:48 dir2/\ndrwxrwxr-x 2 lcn lcn  4096 Jul 29 21:48 dir3/\n$ ls -l | wc -l\n9",
+                    "description": "Count how many files/directories the current working directory have. Although there are `8` files, the output says `9` since it also counts the line \"total 28\". Therefore, you have to subtract 1 by yourself."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "which",
+            "summary": "Search user's $PATH for the command.",
+            "examples": [
+                {
+                    "code": "$ which g++\n/usr/bin/g++",
+                    "description": "Find where the command `g++` locates."
+                },
+                {
+                    "code": "$ which python3",
+                    "description": "Find where the command `python3` locates. If there is nothing shown in the output, it means either you have not installed command `python3` or it is not registered in `$PATH`."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "whoami",
+            "summary": "Show current login name.",
+            "examples": [
+                {
+                    "code": "$ whoami\ndavid",
+                    "description": "Show current login name."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "w"
+            ]
+        },
+        {
+            "name": "yes",
+            "summary": "Answer 'y' forever.",
+            "examples": [
+                {
+                    "code": "$ yes | rm -R .git",
+                    "description": "Remove the git repository. It will automatically answer 'y' for the removal of hash files."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+
+            ]
+        },
+        {
+            "name": "zip",
+            "summary": "Compress files/directories into a ZIP archive.",
+            "premise": [
+                {
+                    "paragraph": "Assume the folder structure",
+                    "isCodeSnippet": false
+                },
+                {
+                    "paragraph": ".\n├── a.txt\n├── bcd.jar\n├── b.txt\n├── c.txt\n├── dir1\n│   ├── abc.txt\n│   ├── dir11\n│   │   ├── a.txt\n│   │   └── a.zip\n│   └── z.txt\n├── dir2\n│   ├── img10.png\n│   ├── img11.png\n│   ├── img12.png\n│   ├── img1.png\n│   ├── img2.png\n│   ├── img3.png\n│   ├── img4.png\n│   ├── img5.png\n│   ├── img6.png\n│   ├── img7.png\n│   ├── img8.png\n│   └── img9.png\n└── dir3\n    ├── album.png\n    ├── a.mp3\n    ├── b.mp3\n    ├── c.mp3\n    └── t.txt",
+                    "isCodeSnippet": true
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ zip -r a.zip *\nadding: a.txt (deflated 6%)\nadding: bcd.jar (stored 0%)\nadding: b.txt (stored 0%)\nadding: c.txt (stored 0%)\nadding: dir1/ (stored 0%)\nadding: dir1/z.txt (stored 0%)\nadding: dir1/abc.txt (stored 0%)\nadding: dir1/dir11/ (stored 0%)\nadding: dir1/dir11/a.zip (stored 0%)\nadding: dir1/dir11/a.txt (stored 0%)\nadding: dir2/ (stored 0%)\nadding: dir2/img8.png (stored 0%)\nadding: dir2/img6.png (stored 0%)\nadding: dir2/img5.png (stored 0%)\nadding: dir2/img10.png (stored 0%)\nadding: dir2/img3.png (stored 0%)\nadding: dir2/img1.png (stored 0%)\nadding: dir2/img7.png (stored 0%)\nadding: dir2/img12.png (stored 0%)\nadding: dir2/img4.png (stored 0%)\nadding: dir2/img2.png (stored 0%)\nadding: dir2/img9.png (stored 0%)\nadding: dir2/img11.png (stored 0%)\nadding: dir3/ (stored 0%)\nadding: dir3/t.txt (stored 0%)\nadding: dir3/b.mp3 (stored 0%)\nadding: dir3/album.png (stored 0%)\nadding: dir3/c.mp3 (stored 0%)\nadding: dir3/a.mp3 (stored 0%)",
+                    "description": "Recursively group all files and directories in a ZIP archive."
+                },
+                {
+                    "code": "$ zip -r9 a.zip *\nadding: a.txt (deflated 6%)\nadding: bcd.jar (stored 0%)\nadding: b.txt (stored 0%)\nadding: c.txt (stored 0%)\nadding: dir1/ (stored 0%)\nadding: dir1/z.txt (stored 0%)\nadding: dir1/abc.txt (stored 0%)\nadding: dir1/dir11/ (stored 0%)\nadding: dir1/dir11/a.zip (stored 0%)\nadding: dir1/dir11/a.txt (stored 0%)\nadding: dir2/ (stored 0%)\nadding: dir2/img8.png (stored 0%)\nadding: dir2/img6.png (stored 0%)\nadding: dir2/img5.png (stored 0%)\nadding: dir2/img10.png (stored 0%)\nadding: dir2/img3.png (stored 0%)\nadding: dir2/img1.png (stored 0%)\nadding: dir2/img7.png (stored 0%)\nadding: dir2/img12.png (stored 0%)\nadding: dir2/img4.png (stored 0%)\nadding: dir2/img2.png (stored 0%)\nadding: dir2/img9.png (stored 0%)\nadding: dir2/img11.png (stored 0%)\nadding: dir3/ (stored 0%)\nadding: dir3/t.txt (stored 0%)\nadding: dir3/b.mp3 (stored 0%)\nadding: dir3/album.png (stored 0%)\nadding: dir3/c.mp3 (stored 0%)\nadding: dir3/a.mp3 (stored 0%)",
+                    "description": "Recursively group all files and directories in a ZIP archive using the best compression level. (The default compression level is `-6`.)"
+                },
+                {
+                    "code": "$ zip -r a.zip * -x \\*.txt\nadding: bcd.jar (stored 0%)\nadding: dir1/ (stored 0%)\nadding: dir1/dir11/ (stored 0%)\nadding: dir1/dir11/a.zip (stored 0%)\nadding: dir2/ (stored 0%)\nadding: dir2/img8.png (stored 0%)\nadding: dir2/img6.png (stored 0%)\nadding: dir2/img5.png (stored 0%)\nadding: dir2/img10.png (stored 0%)\nadding: dir2/img3.png (stored 0%)\nadding: dir2/img1.png (stored 0%)\nadding: dir2/img7.png (stored 0%)\nadding: dir2/img12.png (stored 0%)\nadding: dir2/img4.png (stored 0%)\nadding: dir2/img2.png (stored 0%)\nadding: dir2/img9.png (stored 0%)\nadding: dir2/img11.png (stored 0%)\nadding: dir3/ (stored 0%)\nadding: dir3/b.mp3 (stored 0%)\nadding: dir3/album.png (stored 0%)\nadding: dir3/c.mp3 (stored 0%)\nadding: dir3/a.mp3 (stored 0%)",
+                    "description": "Recursively group all files and directories in a ZIP archive except files with extension \"txt\". Escaping '*' can avoid shell expansion and let `zip` program to do the expansion recursively."
+                }
+            ],
+            "tips": [
+
+            ],
+            "relatedCommands": [
+                "gunzip", "gzip", "split", "tar", "unzip"
             ]
         }
     ]

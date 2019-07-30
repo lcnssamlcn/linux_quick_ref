@@ -37,9 +37,6 @@ public class ManpageActivity extends AppCompatActivity {
     TextView tips;
     TextView relatedCommands;
 
-    static final String TAG_CODE_SNIPPET_OPEN = "<code-snippet>";
-    static final String TAG_CODE_SNIPPET_CLOSE = "</code-snippet>";
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

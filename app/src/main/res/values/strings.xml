@@ -8,6 +8,7 @@
         <item>cat</item>
         <item>cd</item>
         <item>chmod</item>
+        <item>chown</item>
         <item>clear</item>
         <item>cp</item>
         <item>cut</item>
@@ -17,15 +18,63 @@
         <item>dirname</item>
         <item>du</item>
         <item>echo</item>
-        <item>exit</item>
         <item>export</item>
         <item>file</item>
         <item>find</item>
+        <item>free</item>
         <item>ftp</item>
-        <item>rlogin</item>
+        <item>grep</item>
+        <item>gunzip</item>
+        <item>gzip</item>
+        <item>head</item>
+        <item>hostname</item>
+        <item>id</item>
+        <item>ifconfig</item>
+        <item>info</item>
+        <item>kill</item>
+        <item>less</item>
+        <item>ln</item>
+        <item>logout</item>
+        <item>ls</item>
+        <item>man</item>
+        <item>mkdir</item>
+        <item>more</item>
+        <item>mount</item>
+        <item>mv</item>
+        <item>netstat</item>
+        <item>nice</item>
+        <item>nslookup</item>
+        <item>passwd</item>
+        <item>ping</item>
+        <item>ps</item>
+        <item>pwd</item>
+        <item>renice</item>
+        <item>rm</item>
         <item>scp</item>
+        <item>sed</item>
+        <item>shutdown</item>
+        <item>sort</item>
+        <item>source</item>
+        <item>split</item>
         <item>ssh</item>
+        <item>sudo</item>
+        <item>tail</item>
+        <item>tar</item>
+        <item>top</item>
+        <item>touch</item>
+        <item>traceroute</item>
+        <item>umount</item>
+        <item>unalias</item>
         <item>uname</item>
+        <item>unzip</item>
+        <item>useradd</item>
+        <item>userdel</item>
+        <item>w</item>
+        <item>wc</item>
+        <item>which</item>
+        <item>whoami</item>
+        <item>yes</item>
+        <item>zip</item>
     </string-array>
     <string name="manpage_premise_label">Scenario</string>
     <string name="manpage_cmd_examples_label">Examples</string>
