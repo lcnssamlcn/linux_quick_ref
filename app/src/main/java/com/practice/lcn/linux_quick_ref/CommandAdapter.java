@@ -18,12 +18,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CommandViewHolder> implements Filterable {
+public class CommandAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements Filterable {
     private Context context;
     /* read-only commands */
     private final List<String> commands;
     /* filtered commands */
     private List<String> filteredCommands;
+
+    private static final int LAYOUT_BG_DARK = 1;
+    private static final int LAYOUT_BG_LIGHT = 2;
 
     public CommandAdapter(Context context, final List<String> commands) {
         this.context = context;
@@ -40,19 +43,34 @@ public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CommandV
         }
     }
 
-    @NonNull
-    @Override
-    public CommandViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.command_list_item, parent, false);
-        Log.i(MainActivity.TAG, "create");
-        return new CommandViewHolder(v);
+    public static class CommandBGLightViewHolder extends CommandViewHolder {
+        public CommandBGLightViewHolder(View itemView) {
+            super(itemView);
+        }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CommandViewHolder cvh, int pos) {
-        cvh.setIsRecyclable(false);
-        if (pos % 2 == 1)
-            cvh.title.setBackgroundColor(ContextCompat.getColor(context, R.color.command_list_item_bg_light));
+    public int getItemViewType(int pos) {
+        return pos % 2 == 0 ? CommandAdapter.LAYOUT_BG_DARK : CommandAdapter.LAYOUT_BG_LIGHT;
+    }
+
+    @NonNull
+    @Override
+    public CommandViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        Log.i(MainActivity.TAG, "create");
+        if (viewType == CommandAdapter.LAYOUT_BG_DARK) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.command_list_item, parent, false);
+            return new CommandViewHolder(v);
+        }
+        else {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.command_list_item_bg_light, parent, false);
+            return new CommandBGLightViewHolder(v);
+        }
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder vh, int pos) {
+        CommandViewHolder cvh = (CommandViewHolder) vh;
         cvh.title.setText(filteredCommands.get(pos));
         cvh.title.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +93,6 @@ public class CommandAdapter extends RecyclerView.Adapter<CommandAdapter.CommandV
                 context.startActivity(intent);
             }
         });
-        Log.i(MainActivity.TAG, String.format("%d, %d, %d, %d: \"%s\"", pos, cvh.getAdapterPosition(), cvh.getLayoutPosition(), filteredCommands.size(), cvh.title.getText().toString()));
     }
 
     @Override
