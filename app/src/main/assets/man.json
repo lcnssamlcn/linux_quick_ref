@@ -761,7 +761,7 @@
             "summary": "Display memory information.",
             "examples": [
                 {
-                    "code": "$ free -h\ntotal        used        free      shared  buff/cache   available\nMem:           1.9G        443M        1.1G         10M        422M        1.3G\nSwap:          4.0G        321M        3.7G",
+                    "code": "$ free -h\n               total       used        free      shared  buff/cache   available\nMem:           1.9G        443M        1.1G         10M        422M        1.3G\nSwap:          4.0G        321M        3.7G",
                     "description": "Display memory information in a Human-readable way."
                 }
             ],
@@ -1277,6 +1277,100 @@
             ],
             "relatedCommands": [
                 "more"
+            ]
+        },
+        {
+            "name": "lftp",
+            "summary": "Launch interactive console to establish a FTP (File Transfer Protocol) connection.",
+            "premise": [
+                {
+                    "paragraph": "Assume\n  lftp>\nas the `lftp` console.",
+                    "isCodeSnippet": false
+                }
+            ],
+            "examples": [
+                {
+                    "code": "$ lftp",
+                    "description": "Launch the `lftp` console."
+                },
+                {
+                    "code": "$ lftp\nlftp> open -u david remote-server.com",
+                    "description": "Establish a FTP connection to FTP server `remote-server.com` logged in as `david`. Password will be prompted afterwards."
+                },
+                {
+                    "code": "lftp> !<cmd> [ <args> ]",
+                    "description": "Run `&lt;cmd&gt;` in local machine."
+                },
+                {
+                    "code": "lftp> ls",
+                    "description": "LiSt all files under current working directory in remote server."
+                },
+                {
+                    "code": "lftp> cd public_html",
+                    "description": "Navigate to directory `./public_html` in remote server."
+                },
+                {
+                    "code": "lftp> lcd dir1",
+                    "description": "Navigate to directory `./dir1` in local machine."
+                },
+                {
+                    "code": "lftp> mkdir dir1",
+                    "description": "Create a new directory `./dir1` in FTP server."
+                },
+                {
+                    "code": "lftp> get doc.txt",
+                    "description": "Download `doc.txt` to current working directory in local machine."
+                },
+                {
+                    "code": "lftp> get doc.txt -o doc2.txt",
+                    "description": "Save `doc.txt` as `doc2.txt` to current working directory in local machine."
+                },
+                {
+                    "code": "lftp> put doc.txt",
+                    "description": "Upload `./doc.txt` to current working directory in FTP server."
+                },
+                {
+                    "code": "lftp> put doc.txt -o dir1/",
+                    "description": "Upload `doc.txt` to `./dir1/` in FTP server."
+                },
+                {
+                    "code": "lftp> put doc.txt -o doc2.txt",
+                    "description": "Upload `doc.txt` as `doc2.txt` to current working directory in FTP server."
+                },
+                {
+                    "code": "lftp> mv doc.txt doc2.txt",
+                    "description": "Rename remote file `doc.txt` as `doc2.txt`."
+                },
+                {
+                    "code": "lftp> rm doc.txt",
+                    "description": "ReMove `doc.txt` under current working directory in FTP server."
+                },
+                {
+                    "code": "lftp> mrm -r dir1",
+                    "description": "ReMove the directory `./dir1` in FTP server Recursively."
+                },
+                {
+                    "code": "lftp> mirror -R local_dir remote_dir",
+                    "description": "Upload the entire folder `./local_dir` from local machine to `./remote_dir` in FTP server. `./remote_dir` need not to exist in the first place."
+                },
+                {
+                    "code": "lftp> mirror -R local_dir remote_dir --exclude \"^doc\\.txt$\" --exclude \"^dir1/doc2\\.txt$\"",
+                    "description": "Upload the entire folder `./local_dir` from local machine to `./remote_dir` in FTP server except files `doc.txt` and `dir1/a.txt`. `./remote_dir` need not to exist in the first place."
+                },
+                {
+                    "code": "lftp> mirror -R local_dir remote_dir --exclude-glob *.txt",
+                    "description": "Upload the entire folder `./local_dir` from local machine to `./remote_dir` in FTP server except files with extension \"txt\". `./remote_dir` need not to exist in the first place."
+                },
+                {
+                    "code": "lftp> bye",
+                    "description": "Close the current FTP connection if have. Then quit the `lftp` console."
+                }
+            ],
+            "tips": [
+                "`lftp` is way more powerful than `ftp`. It has more functionalities such as removing the directory recursively and uploading the entire folder. You should abandon `ftp` and start learning `lftp`."
+            ],
+            "relatedCommands": [
+                "ftp"
             ]
         },
         {

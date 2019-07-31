@@ -7,7 +7,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.text.HtmlCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,14 +14,14 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.text.style.BulletSpan;
 import android.text.style.ForegroundColorSpan;
-import android.text.style.ImageSpan;
 import android.text.style.TypefaceSpan;
 import android.util.Log;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -30,6 +29,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ManpageActivity extends AppCompatActivity {
+    ScrollView rootScrollView;
     TextView cmdName;
     TextView summary;
     RecyclerView premise;
@@ -41,9 +41,22 @@ public class ManpageActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manpage);
+        init();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        init();
+    }
+
+    private void init() {
         Intent intent = getIntent();
         String cmdName = intent.getStringExtra(MainActivity.EXTRA_CMD_NAME);
         setTitle(cmdName);
+
+        rootScrollView = findViewById(R.id.manpage_root);
 
         Command command = App.manpages.find(cmdName);
         this.cmdName = findViewById(R.id.manpage_cmd_name);
@@ -89,12 +102,16 @@ public class ManpageActivity extends AppCompatActivity {
         for (int i = 0; i < relatedCommandList.size(); i++) {
             String rc = relatedCommandList.get(i);
             SpannableString relatedCommandSpanStr = new SpannableString(rc);
-            relatedCommandSpanStr.setSpan(new CommandLinkSpan(rc), 0, relatedCommandSpanStr.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            relatedCommandSpanStr.setSpan(new CommandLinkSpan(this, rc), 0, relatedCommandSpanStr.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
             relatedCommandsSpanStr = TextUtils.concat(relatedCommandsSpanStr, relatedCommandSpanStr);
             if (i != relatedCommandList.size() - 1)
                 relatedCommandsSpanStr = TextUtils.concat(relatedCommandsSpanStr, ", ");
         }
+        relatedCommands.setMovementMethod(LinkMovementMethod.getInstance());
         relatedCommands.setText(relatedCommandsSpanStr);
+
+        rootScrollView.smoothScrollTo(0, 0);
+        rootScrollView.smoothScrollTo(0, 0);
     }
 
     static void applyStyleOnCommands(Context context, Spannable spanStr) {
